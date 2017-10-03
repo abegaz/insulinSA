@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 
 --
 -- Table structure for table `controller`
---
+--There shouldn't be tables for controllers and views. In the MVC architecture, tables are generally created for the model. Please focus mainly on your models when designing your database
 
 CREATE TABLE `controller` (
   `idCONTROLLER` int(11) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `controller` (
 --
 -- Dumping data for table `controller`
 --
-
+-- There shouldn't be tables for controllers and views. In the MVC architecture, tables are generally created for the model. Please focus mainly on your models when designing your database
 INSERT INTO `controller` (`idCONTROLLER`, `status`, `maxDailyDose`, `maxSingleDose`, `minDose`, `currentDose`, `doseDelivered`, `PUMP_idPUMP`, `POWERSUPPLY_idPOWERSUPPLY`, `RESERVOIR_idRESERVOIR`, `SENSOR_idSENSOR`, `DISPLAY_idDisplay`) VALUES
 (1, 'Running', 555, 34, 8, 20, 120, 1, 2, 1, 1, 3),
 (2, 'Stopped', 600, 32, 14, 30, 240, 2, 1, 2, 1, 1);
@@ -93,7 +93,7 @@ CREATE TABLE `patient` (
 
 --
 -- Dumping data for table `patient`
---
+-- good, this is a model
 
 INSERT INTO `patient` (`idPATIENT`, `firstName`, `lastName`, `bloodType`, `age`, `gender`, `height`, `weight`) VALUES
 (1, 'Freddie', 'Brian', 'O-', 34, 'Male', 6, 180),
@@ -103,7 +103,7 @@ INSERT INTO `patient` (`idPATIENT`, `firstName`, `lastName`, `bloodType`, `age`,
 
 --
 -- Table structure for table `powersupply`
---
+-- this is good
 
 CREATE TABLE `powersupply` (
   `idPOWERSUPPLY` int(11) NOT NULL,
@@ -125,7 +125,7 @@ INSERT INTO `powersupply` (`idPOWERSUPPLY`, `batteryLevel`, `mode`, `currentUsag
 
 --
 -- Table structure for table `pump`
---
+-- this could be an attribute in another table
 
 CREATE TABLE `pump` (
   `idPUMP` int(11) NOT NULL,
@@ -145,7 +145,7 @@ INSERT INTO `pump` (`idPUMP`, `doseRate`) VALUES
 
 --
 -- Table structure for table `reservoir`
---
+--good
 
 CREATE TABLE `reservoir` (
   `idRESERVOIR` int(11) NOT NULL,
@@ -166,7 +166,7 @@ INSERT INTO `reservoir` (`idRESERVOIR`, `maxLevel`, `minLevel`, `currenLevel`) V
 
 --
 -- Table structure for table `sensor`
---
+--could be an attribute
 
 CREATE TABLE `sensor` (
   `idSENSOR` int(11) NOT NULL,
@@ -189,7 +189,7 @@ INSERT INTO `sensor` (`idSENSOR`, `glucoseReading`) VALUES
 
 --
 -- Indexes for table `controller`
---
+--There shouldn't be tables for controllers and views. In the MVC architecture, tables are generally created for the model. Please focus mainly on your models when designing your database
 ALTER TABLE `controller`
   ADD PRIMARY KEY (`idCONTROLLER`),
   ADD UNIQUE KEY `idCONTROLLER_UNIQUE` (`idCONTROLLER`),
@@ -201,7 +201,7 @@ ALTER TABLE `controller`
 
 --
 -- Indexes for table `display`
---
+--There shouldn't be tables for controllers and views. In the MVC architecture, tables are generally created for the model. Please focus mainly on your models when designing your database
 ALTER TABLE `display`
   ADD PRIMARY KEY (`idDisplay`),
   ADD UNIQUE KEY `DISPLAYcol_UNIQUE` (`idDisplay`);
@@ -293,7 +293,7 @@ ALTER TABLE `sensor`
 
 --
 -- Constraints for table `controller`
---
+--There shouldn't be tables for controllers and views. In the MVC architecture, tables are generally created for the model. Please focus mainly on your models when designing your database
 ALTER TABLE `controller`
   ADD CONSTRAINT `fk_CONTROLLER_DISPLAY1` FOREIGN KEY (`DISPLAY_idDisplay`) REFERENCES `display` (`idDisplay`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_CONTROLLER_POWERSUPPLY1` FOREIGN KEY (`POWERSUPPLY_idPOWERSUPPLY`) REFERENCES `powersupply` (`idPOWERSUPPLY`) ON DELETE NO ACTION ON UPDATE NO ACTION,
