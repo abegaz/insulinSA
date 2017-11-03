@@ -25,9 +25,11 @@ class Controlleredit
 	reading0 = safeMin;
 	reading1 = safeMax;
 
-/* Before read in, a safety check is performed to determine that the system mode is set to Auto */
 
- if (remainingInsulin >= maxSingleDose && cumulativeDose < maxDailyDose) 
+public void runPump()
+{
+/* Before read in, a safety check is performed to determine that the system mode is set to Auto */
+	if (remainingInsulin >= maxSingleDose && cumulativeDose < maxDailyDose) 
 		{
 			//retrieve current blood sugar level
 						//reading2 = Sensor.getReading();
