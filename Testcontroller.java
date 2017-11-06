@@ -11,7 +11,6 @@ public class Testcontroller {
 	public static void main(String[] args) 
 	{ //should be in main here just for testing
 		runPump();
-		InsulinLeft();// found at bottom, just not working yet.
 	}
 
 	static int dose=0;
@@ -47,7 +46,7 @@ while(true){
 		if(checking.equals("yes"))
 		{
 		
-		System.out.println("Enter Bs");
+		System.out.println("Enter BS");
 		Scanner s1=new Scanner(System.in);
 		int reading2=s1.nextInt();
 		//System.out.println(reading2);
@@ -174,15 +173,19 @@ while(true){
 //		System.out.println("after reading1: "+reading1);
 //		System.out.println("after reading2: "+reading2);
 
-		} else{
+		InsulinLeft();// found at bottom, just not working yet.
+		
+		} 
+		
+		else{
 			System.out.println("ended. input error");
 			break;
 			}
 		}
-
 	
 	}
-	public static void InsulinLeft() // Insulin left over
+	
+	private static void InsulinLeft() // Insulin left over
 	{
 		updatedVialAmount=(vialAmount-dose);
 		vialAmount=updatedVialAmount;
@@ -193,13 +196,15 @@ while(true){
 		{
 			System.out.println("WARNING: New insulin vial needed");
 		}
-		else 
+		else if (vialAmount > 0)
 		{
-			System.out.println("Insulin left: "+ vialAmount);
+			System.out.println( "Vial State: Good");
 			
 		}
 		
 	}
+
+
 }
 
 
