@@ -1,21 +1,31 @@
+//Dillan Ellis and Madeleine Godwin
+
+
+
+//plan on finishing InsulinLeft method tomorrow morning and helping with updating for lauras buttons
+
 import java.util.Scanner;
 
 public class Testcontroller {
 
-	public static void main(String[] args) { //should be in main here just for testing
+	public static void main(String[] args) 
+	{ //should be in main here just for testing
 		runPump();
+		InsulinLeft();// found at bottom, just not working yet.
 	}
 
 	static int dose=0;
 	
-	static int reading0 = 0;
-	static int reading1 = 0;
-	static int reading2 = 0;
+	static int reading0 = 9;
+	static int reading1 = 3;
+	static int reading2 = 7;
 	
 	static int safeMin=60;
 	static int safeMax=140;
 	static int minDose = 10;
-	static int maxSingleDose=40;
+	static int maxSingleDose=20;
+	static int vialAmount=50;
+	static int updatedVialAmount;
 	
 	static int compDose=0;
 	
@@ -27,6 +37,7 @@ public class Testcontroller {
 		
 		reading0 =120; //for testing
 		reading1 = 100; //for testing
+		
 		
 while(true){
 		System.out.println("check Bs?");
@@ -131,7 +142,7 @@ while(true){
 		if (compDose <= maxSingleDose)
 		{
 			dose = compDose;
-			System.out.println(dose);
+			System.out.println("Suggested Dose: "+ dose+"mL");
 			//InsulinPump.deliverInsulin(dose);
 		}
 		//If the single dose computed is too high
@@ -146,7 +157,7 @@ while(true){
 		if (dose > 0)
 		{
 			//Display to the user the dose delivered
-			System.out.println(dose);
+			System.out.println("Dose Delivered after check: " + dose+"mL");
 		}
 
 		//Adjust the reading values to accomodate for the new reading
@@ -164,10 +175,34 @@ while(true){
 //		System.out.println("after reading2: "+reading2);
 
 		} else{
-			System.out.println("ended");
+			System.out.println("ended. input error");
 			break;
 			}
 		}
+
+	
+	}
+	public static void InsulinLeft() // Insulin left over
+	{
+		updatedVialAmount=(vialAmount-dose);
+		vialAmount=updatedVialAmount;
+		
+		System.out.println("Insulin leftover: " + vialAmount + "mL");
+		
+		if (vialAmount <=0)
+		{
+			System.out.println("WARNING: New insulin vial needed");
+		}
+		else 
+		{
+			System.out.println("Insulin left: "+ vialAmount);
+			
+		}
+		
 	}
 }
+
+
+
+
 
