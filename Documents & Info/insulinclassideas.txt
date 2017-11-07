@@ -1,0 +1,15 @@
+Patient Main Menu
+  Blood Test Manually
+  Bolus (manual insulin injection)
+  User Data
+  Settings
+  Battery level
+User Data
+  glucose numbers throughout day, time, time of last reading, current reading of glucose, high normal or low blood level? connection levels to wifi/doctor
+Settings
+  change name, set time, turn off pump
+Doctor Patient View
+  List of Patients
+    Last Name, First Name, Address, Phone Number
+Doctor Detailed Patient View
+    Last name, First name, address, phone number, type of insulin, insulin level, patient blood sugar level, ideal blood sugar level, timeline of insulin levels
