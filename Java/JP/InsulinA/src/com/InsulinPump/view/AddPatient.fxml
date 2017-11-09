@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paneAddPatient" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.AddPatientController">
+   <children>
+      <Label layoutX="12.0" layoutY="6.0" prefHeight="17.0" prefWidth="246.0" text="Add New Patient">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtPatientId" layoutX="12.0" layoutY="76.0" prefHeight="25.0" prefWidth="131.0" promptText="Patient ID" />
+      <TextField fx:id="txtPatientLastName" layoutX="368.0" layoutY="76.0" prefHeight="25.0" prefWidth="131.0" promptText="Last Name" />
+      <TextField fx:id="txtPatientFirstName" layoutX="202.0" layoutY="76.0" prefHeight="25.0" prefWidth="131.0" promptText="First Name" />
+      <TextField fx:id="txtPatientAddress" layoutX="14.0" layoutY="153.0" prefHeight="25.0" prefWidth="344.0" promptText="Address" />
+      <TextField fx:id="txtPatientPhoneNumber" layoutX="398.0" layoutY="153.0" prefHeight="25.0" prefWidth="131.0" promptText="Phone Number" />
+      <TextField fx:id="txtPatientAge" layoutX="22.0" layoutY="217.0" prefHeight="25.0" prefWidth="111.0" promptText="Age" />
+      <TextField fx:id="txtPatientGender" layoutX="169.0" layoutY="217.0" prefHeight="25.0" prefWidth="111.0" promptText="Gender" />
+      <TextField fx:id="txtPatientHeight" layoutX="303.0" layoutY="217.0" prefHeight="25.0" prefWidth="111.0" promptText="Height" />
+      <TextField fx:id="txtPatientWeight" layoutX="434.0" layoutY="217.0" prefHeight="25.0" prefWidth="111.0" promptText="Weight" />
+      <TextField fx:id="txtPatientInsulinType" layoutX="186.0" layoutY="283.0" prefHeight="25.0" prefWidth="131.0" promptText="Type of Insulin" />
+      <TextField fx:id="txtDoctorId" layoutX="358.0" layoutY="283.0" prefHeight="25.0" prefWidth="151.0" promptText="Doctor ID" />
+      <Button fx:id="btnAddNewPatient" layoutX="226.0" layoutY="356.0" mnemonicParsing="false" onAction="#newPatient" prefHeight="25.0" prefWidth="155.0" text="Add New Patient">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtPatientBloodT" layoutX="22.0" layoutY="283.0" prefHeight="25.0" prefWidth="131.0" promptText="Blood Type" />
+   </children>
+</AnchorPane>

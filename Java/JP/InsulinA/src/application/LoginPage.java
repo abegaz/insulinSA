@@ -17,7 +17,7 @@ public class LoginPage extends Application {
 	private double yOffset = 0;
 	@Override
 	public void start(Stage stage) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("../view/LoginPage.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("../com/InsulinPump/view/LoginPage.fxml"));
 		stage.setTitle("Insulin Pump");
 	    stage.getIcons().add(new Image("file:blueHeartbeat.png"));
         stage.setResizable(false);
