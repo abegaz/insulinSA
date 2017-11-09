@@ -17,9 +17,15 @@ public class Testcontroller {
 
 	static int dose=0;
 	
-	static int reading0 = 9;
-	static int reading1 = 3;
-	static int reading2 = 7;
+	//static int reading0 = 9;
+	//static int reading1 = 3;
+	//static int reading2 = 7;
+	
+	// updated this part!
+	static int reading0;
+	static int reading1;
+	static int reading2;
+	//
 	
 	static int safeMin=60;
 	static int safeMax=120;
