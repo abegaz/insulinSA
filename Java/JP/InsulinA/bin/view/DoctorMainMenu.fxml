@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DoctorMainMenuController">
+   <children>
+      <Button layoutX="334.0" layoutY="128.0" mnemonicParsing="false" prefHeight="128.0" prefWidth="252.0" text="Create New Patient" onAction="#changeSceneToPatientInsert">
+         <font>
+            <Font name="Bell MT" size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="21.0" layoutY="128.0" mnemonicParsing="false" prefHeight="128.0" prefWidth="286.0" text="Current Patient Records" onAction="#changeSceneToDoctorRecords">
+         <font>
+            <Font name="Bell MT" size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="334.0" text="Doctor Main View">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
