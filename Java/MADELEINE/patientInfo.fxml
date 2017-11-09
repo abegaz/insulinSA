@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.AutoCompleteTextField?>
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="2.0" layoutY="2.0" prefHeight="62.0" prefWidth="334.0" text="Patient Information">
+         <font>
+            <Font name="Bell MT" size="24.0" />
+         </font>
+      </Label>
+      <AutoCompleteTextField layoutX="78.0" layoutY="83.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="12.0" layoutY="83.0" prefHeight="26.0" prefWidth="66.0" text="Last Name:" />
+      <Label layoutX="242.0" layoutY="83.0" prefHeight="26.0" prefWidth="65.0" text="First Name:" />
+      <Label layoutX="14.0" layoutY="144.0" prefHeight="26.0" prefWidth="80.0" text="Date of Birth:" />
+      <Label layoutX="470.0" layoutY="83.0" prefHeight="26.0" prefWidth="66.0" text="Patient ID:" />
+      <Label layoutX="242.0" layoutY="144.0" prefHeight="26.0" prefWidth="47.0" text="Gender:" />
+      <Label layoutX="14.0" layoutY="204.0" prefHeight="26.0" prefWidth="47.0" text="Weight:" />
+      <Label layoutX="194.0" layoutY="201.0" prefHeight="34.0" prefWidth="47.0" text="Insulin:" />
+      <Label layoutX="392.0" layoutY="205.0" prefHeight="26.0" prefWidth="39.0" text="Height " />
+      <Label layoutX="15.0" layoutY="269.0" prefHeight="26.0" prefWidth="60.0" text="Blood Type" />
+      <TextField layoutX="308.0" layoutY="83.0" prefHeight="26.0" prefWidth="149.0" />
+      <TextField layoutX="537.0" layoutY="83.0" prefHeight="26.0" prefWidth="134.0" />
+      <TextField layoutX="94.0" layoutY="144.0" prefHeight="26.0" prefWidth="109.0" />
+      <TextField layoutX="308.0" layoutY="144.0" prefHeight="26.0" prefWidth="110.0" />
+      <TextField layoutX="61.0" layoutY="204.0" prefHeight="26.0" prefWidth="54.0" />
+      <TextField layoutX="242.0" layoutY="205.0" prefHeight="26.0" prefWidth="80.0" />
+      <TextField layoutX="79.0" layoutY="270.0" prefHeight="26.0" prefWidth="80.0" />
+      <TextField layoutX="445.0" layoutY="205.0" prefHeight="26.0" prefWidth="54.0" />
+   </children>
+</AnchorPane>
