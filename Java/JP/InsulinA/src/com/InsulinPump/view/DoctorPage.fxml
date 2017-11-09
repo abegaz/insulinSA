@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1003.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1003.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #fff;">
          <children>
@@ -51,17 +50,12 @@
                   <Image url="@white_medical_cross.png" />
                </image>
             </ImageView>
-            <SplitMenuButton layoutX="117.0" layoutY="103.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="224.0" text="List of Physicians">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Doctor Fred Gardner" />
-                <MenuItem mnemonicParsing="false" text="Doctor Chris Frederick" />
-              </items>
-            </SplitMenuButton>
             <Text fill="WHITE" fontSmoothingType="LCD" layoutX="581.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©" textAlignment="CENTER" wrappingWidth="117.2861328125">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
+            <ComboBox fx:id="MenuSelectDoctor" layoutX="114.0" layoutY="89.0" prefHeight="39.0" prefWidth="224.0" promptText="List of Physicians" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="827.0" prefHeight="176.0" prefWidth="1280.0" style="-fx-background-color: #fff;">
@@ -75,7 +69,7 @@
             <TextField alignment="TOP_CENTER" layoutX="648.0" layoutY="14.0" maxHeight="-Infinity" prefHeight="31.0" prefWidth="94.0" promptText="Age" />
             <TextField alignment="TOP_CENTER" layoutX="547.0" layoutY="14.0" maxHeight="-Infinity" prefHeight="31.0" prefWidth="94.0" promptText="Blood Type" />
             <TextField alignment="TOP_CENTER" layoutX="371.0" layoutY="14.0" maxHeight="-Infinity" prefHeight="30.0" prefWidth="169.0" promptText="Last Name" />
-            <Button layoutX="565.0" layoutY="57.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Add Patient" />
+            <Button fx:id="buttonAddPatient" layoutX="565.0" layoutY="57.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Add Patient" />
             <Button layoutX="465.0" layoutY="114.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Delete Patient" />
             <Button layoutX="667.0" layoutY="114.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Edit Patient" />
          </children>
