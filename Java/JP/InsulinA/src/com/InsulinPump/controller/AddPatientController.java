@@ -27,7 +27,7 @@ public class AddPatientController {
     								txtPatientPhoneNumber.getText(),
     								txtDoctorId.getText());
     	
-    	System.out.println(newPatient.toString());
+    	//System.out.println(newPatient.toString());
     	
     	String query = "insert into patient " + "(idPatient, firstName, lastName, address, bloodType, age, gender, height, weight, insulinType, phone, idDoctor) " + "values(?,?,?,?,?,?,?,?,?,?,?,?)";
     	
