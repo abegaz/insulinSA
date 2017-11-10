@@ -42,7 +42,7 @@
                   </Text>
                   <TextField fx:id="TextUsername" layoutX="162.0" layoutY="364.0" prefHeight="31.0" prefWidth="218.0" promptText="Username" />
                   <PasswordField fx:id="TextPassword" layoutX="162.0" layoutY="423.0" prefHeight="31.0" prefWidth="218.0" promptText="Password" />
-                  <Button layoutX="227.0" layoutY="478.0" mnemonicParsing="false" onAction="#changeSceneToDoctorMainMenu" prefHeight="31.0" prefWidth="89.0" text="Login" />
+                  <Button layoutX="227.0" layoutY="478.0" mnemonicParsing="false" onAction="#changeSceneToDoctorPage" prefHeight="31.0" prefWidth="89.0" text="Login" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="pn_patient1" layoutX="658.0" prefHeight="700.0" prefWidth="542.0" style="-fx-background-color: #fff;">

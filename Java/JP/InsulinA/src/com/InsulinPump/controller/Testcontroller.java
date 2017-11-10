@@ -10,7 +10,7 @@ public class Testcontroller {
 	{ //should be in main here just for testing
 			
 		Timer timer = new Timer();
-		timer.schedule(new Timers(), 0 , 10000); //300000
+		timer.schedule(new Timers(), 0 , 100000); //300000
 		
 	}
 

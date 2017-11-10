@@ -55,13 +55,13 @@ public class LoginPageController implements Initializable {
     }
     
 	// This method will redirect the scene into the patient TableView
-    public void changeSceneToDoctorMainMenu(ActionEvent event) throws IOException
+    public void changeSceneToDoctorPage(ActionEvent event) throws IOException
     {
     	String username = "Insulinpump";
     	String password = "1234";
 
     	if(TextUsername.getText().equals(username) && TextPassword.getText().equals(password)) {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/DoctorMainMenu.fxml"));
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/DoctorPage.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
