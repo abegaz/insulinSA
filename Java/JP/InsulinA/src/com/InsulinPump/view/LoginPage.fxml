@@ -52,18 +52,18 @@
                         <Font name="Bell MT" size="48.0" />
                      </font>
                   </Text>
-                  <PasswordField layoutX="162.0" layoutY="368.0" prefHeight="31.0" prefWidth="218.0" promptText="Social Security Number" />
-                  <Text fontSmoothingType="LCD" layoutX="136.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your nine-digit Social Security Number to login and continue" textAlignment="CENTER" wrappingWidth="269.99999475479126">
+                  <PasswordField layoutX="162.0" layoutY="355.0" prefHeight="31.0" prefWidth="218.0" promptText="Patient ID Number" />
+                  <Text fontSmoothingType="LCD" layoutX="136.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your seven-digit Patient ID Number to login and continue" textAlignment="CENTER" wrappingWidth="269.99999475479126">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Text>
-                  <Text fontSmoothingType="LCD" layoutX="182.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="177.00001001358032">
+                  <Text fontSmoothingType="LCD" layoutX="182.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="177.00001001358032">
                      <font>
                         <Font name="Bell MT" size="34.0" />
                      </font>
                   </Text>
-                  <Button layoutX="226.0" layoutY="418.0" mnemonicParsing="false" onAction="#changeSceneToPatientMainMenu" prefHeight="31.0" prefWidth="89.0" text="Login" />
+                  <Button layoutX="226.0" layoutY="405.0" mnemonicParsing="false" onAction="#changeSceneToPatientMainMenu" prefHeight="31.0" prefWidth="89.0" text="Login" />
                </children>
             </AnchorPane>
          </children>
