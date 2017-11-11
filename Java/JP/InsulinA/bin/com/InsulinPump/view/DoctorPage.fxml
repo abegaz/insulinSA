@@ -7,35 +7,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.DoctorPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="763.0" prefWidth="1398.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.DoctorPageController">
    <children>
-      <AnchorPane layoutY="-7.0" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;">
+      <AnchorPane layoutY="-7.0" prefHeight="797.0" prefWidth="1500.0" style="-fx-background-color: #fff;">
          <children>
-            <TableView layoutY="207.0" prefHeight="404.0" prefWidth="1215.0" style="-fx-background-color: #fff;">
+            <TableView fx:id="tableViewInfo" onMouseClicked="#mouseClickedOnTableView" layoutY="207.0" prefHeight="432.0" prefWidth="1500.0" style="-fx-background-color: #fff;">
                <columns>
-                  <TableColumn editable="false" prefWidth="176.0" resizable="false" text="Patient ID" />
-                  <TableColumn editable="false" prefWidth="171.66665649414062" resizable="false" text="First Name " />
-                  <TableColumn editable="false" prefWidth="164.66668701171875" resizable="false" text="Last Name" />
-                  <TableColumn editable="false" prefWidth="98.66668701171875" resizable="false" text="Blood Type" />
-                  <TableColumn editable="false" minWidth="0.0" prefWidth="84.0" resizable="false" text="Age" />
-                  <TableColumn editable="false" prefWidth="79.33331298828125" resizable="false" text="Gender " />
-                  <TableColumn editable="false" prefWidth="134.3333740234375" resizable="false" text="Height (Inches)" />
-                  <TableColumn editable="false" prefWidth="147.6666259765625" resizable="false" text="Weight (Pounds)" />
-                  <TableColumn editable="false" prefWidth="161.0" resizable="false" text="Insulin Type" />
+                  <TableColumn fx:id="cPatientId" editable="false" prefWidth="131.00003051757812" resizable="false" text="Patient ID" />
+                  <TableColumn fx:id="cFirstName" editable="false" prefWidth="122.99996948242188" resizable="false" text="First Name " />
+                  <TableColumn fx:id="cLastName" editable="false" prefWidth="125.0" resizable="false" text="Last Name" />
+                  <TableColumn fx:id="cAddress" prefWidth="261.0" text="Address" />
+                  <TableColumn fx:id="cBloodType" editable="false" prefWidth="85.0" resizable="false" text="Blood Type" />
+                  <TableColumn fx:id="cAge" editable="false" minWidth="0.0" prefWidth="84.0" resizable="false" text="Age" />
+                  <TableColumn fx:id="cGender" editable="false" minWidth="5.0" prefWidth="72.0" resizable="false" text="Gender " />
+                  <TableColumn fx:id="cHeight" editable="false" prefWidth="116.0" resizable="false" text="Height (Inches)" />
+                  <TableColumn fx:id="cWeight" editable="false" prefWidth="118.0" resizable="false" text="Weight (Pounds)" />
+                  <TableColumn fx:id="cInsulinType" editable="false" prefWidth="93.0" resizable="false" text="Insulin Type" />
+                  <TableColumn fx:id="cPhone" minWidth="0.0" prefWidth="212.0" text="Phone" />
+                   <TableColumn fx:id="cDoctor" minWidth="0.0" prefWidth="78.0" text="DoctorID" />
                </columns>
             </TableView>
-            <Text fontSmoothingType="LCD" layoutX="523.0" layoutY="696.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©" textAlignment="CENTER" wrappingWidth="153.2861328125">
+            <Text fontSmoothingType="LCD" layoutX="726.0" layoutY="751.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©" textAlignment="CENTER" wrappingWidth="153.2861328125">
                <font>
                   <Font size="9.0" />
                </font>
             </Text>
-            <Button fx:id="addPatient" layoutX="370.0" layoutY="636.0" mnemonicParsing="false" onAction="#changeSceneToPatientInsert" prefHeight="31.0" prefWidth="153.0" text="Add Patient" />
-            <Button layoutX="676.0" layoutY="636.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="153.0" text="Delete Patient" />
+            <Button fx:id="addPatient" layoutX="550.0" layoutY="680.0" mnemonicParsing="false" onAction="#changeSceneToPatientInsert" prefHeight="31.0" prefWidth="153.0" text="Add Patient" />
+            <Button fx:id="bDeletePatient" layoutX="905.0" layoutY="683.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="31.0" prefWidth="153.0" text="Delete Patient" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="1242.0" style="-fx-background-color: #000099;">
+      <AnchorPane prefHeight="200.0" prefWidth="1500.0" style="-fx-background-color: #000099;">
          <children>
-            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="364.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician Homepage">
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="473.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician Homepage">
                <font>
                   <Font name="Bell MT" size="60.0" />
                </font>
