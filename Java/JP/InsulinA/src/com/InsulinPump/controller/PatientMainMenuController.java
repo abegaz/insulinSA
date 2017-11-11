@@ -1,6 +1,8 @@
-package application;
+package com.InsulinPump.controller;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,21 +17,27 @@ public class PatientMainMenuController {
 	@FXML Text insulinLevelLbl;
 	@FXML Button btnBolus;
 	
-	int dose=0;
+	static int dose=0;
 
- 	int reading0;
-	int reading1;
+ 	static int reading0;
+ 	static int reading1;
 	int reading2;
 
-	int safeMin=60;
-	 int safeMax=120;
-	 int minDose = 10;
-	 int maxSingleDose=20;
-	 int vialAmount=50;
-	 int updatedVialAmount;
-	 int compDose=0;
+	static int safeMin=60;
+	static int safeMax=120;
+	static int minDose = 10;
+	static int maxSingleDose=20;
+	static int vialAmount=50;
+	static int updatedVialAmount;
+	static int compDose=0;
 	
-	 public void runPump()
+	@FXML public void initialize() {
+	 	Timer timer = new Timer();
+		timer.schedule(new Timers(), 0 , 10000); //300000
+		
+	}
+	
+	public void runPump()
 		{
 
 
@@ -168,7 +176,7 @@ public class PatientMainMenuController {
 			InsulinLeft();
 			BatteryLevel();
 		}
-		public void InsulinLeft() // Insulin left over in the reservour/vial.
+		public  void InsulinLeft() // Insulin left over in the reservour/vial.
 		{
 			//System.out.println("Vial total =" + vialAmount);
 			updatedVialAmount=(vialAmount-dose);
@@ -188,7 +196,7 @@ public class PatientMainMenuController {
 			
 		}
 	 
-		public void BatteryLevel(){
+		public  void BatteryLevel(){
 			
 			Random rand = new Random(); 
 			int pickedNumber = rand.nextInt(99) + 1; 
@@ -202,4 +210,16 @@ public class PatientMainMenuController {
 			//System.out.println("Battery Level good:" + pickedNumber+ "%");
 			}
 		}
+		
+		//Timer Class & Methods - In charge of running the methods every t amount of miliseconds
+		public class Timers extends TimerTask{	
+
+			//this method performs the task
+			public void run () {
+			// need to automatically input yes in the test controller for check bs.
+			runPump();
+			}
+		}
+
+
 }

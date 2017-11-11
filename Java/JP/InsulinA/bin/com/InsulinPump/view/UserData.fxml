@@ -3,17 +3,33 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="paneUserData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="643.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="paneUserData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView fx:id="tblPatientData" prefHeight="433.0" prefWidth="643.0">
+      <TableView fx:id="tblPatientData" layoutY="200.0" prefHeight="467.0" prefWidth="1215.0" style="-fx-background-color: #fff;">
         <columns>
-            <TableColumn fx:id="clnPatientId" prefWidth="75.0" text="Patient ID" />
-          <TableColumn fx:id="clnReadingTime" prefWidth="113.0" text="Time of Reading" />
-          <TableColumn fx:id="clnGlucoseLevel" minWidth="0.0" prefWidth="183.0" text="Glucose Level (mg/dL)" />
-            <TableColumn fx:id="clnCurrentGlucose" minWidth="0.0" prefWidth="201.0" text="Current Glucose Level (mg/dL)" />
-            <TableColumn fx:id="clnHighLow" minWidth="0.0" prefWidth="70.0" text="High/Low" />
+            <TableColumn fx:id="clnPatientId" prefWidth="220.00003051757812" text="Patient ID" />
+          <TableColumn fx:id="clnReadingTime" prefWidth="213.0" text="Time of Reading" />
+          <TableColumn fx:id="clnGlucoseLevel" minWidth="0.0" prefWidth="275.0" text="Average Glucose Level (mg/dL)" />
+            <TableColumn fx:id="clnCurrentGlucose" minWidth="0.0" prefWidth="279.0" text="Current Glucose Level (mg/dL)" />
+            <TableColumn fx:id="clnHighLow" minWidth="0.0" prefWidth="227.0" text="High/Low" />
         </columns>
       </TableView>
+      <AnchorPane prefHeight="200.0" prefWidth="1242.0" style="-fx-background-color: #000099;">
+         <children>
+            <Text fill="WHITE" layoutX="343.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reading Information">
+               <font>
+                  <Font name="Bell MT" size="60.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text fontSmoothingType="LCD" layoutX="571.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©">
+         <font>
+            <Font name="Bell MT" size="9.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
