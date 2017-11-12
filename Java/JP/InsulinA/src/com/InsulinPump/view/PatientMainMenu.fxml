@@ -51,7 +51,6 @@
       <Text fx:id="currentLevelLbl" layoutX="805.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Blood Sugar" wrappingWidth="328.9999854564667" />
       <Text fx:id="batteryLevelLbl" layoutX="364.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.6708984375" />
       <Text fx:id="insulinLevelLbl" layoutX="690.0" layoutY="595.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.67089247703552" />
+      <Text fx:id="DateTimeLbl" layoutX="805.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; TIme:" wrappingWidth="328.99999022483826" />
    </children>
 </AnchorPane>
-
-

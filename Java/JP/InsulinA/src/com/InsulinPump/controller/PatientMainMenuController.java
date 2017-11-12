@@ -1,5 +1,7 @@
 package com.InsulinPump.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,6 +17,7 @@ public class PatientMainMenuController {
 	@FXML Text currentLevelLbl;
 	@FXML Text batteryLevelLbl;
 	@FXML Text insulinLevelLbl;
+	@FXML Text DateTimeLbl;
 	@FXML Button btnBolus;
 	
 	static int dose=0;
@@ -33,16 +36,14 @@ public class PatientMainMenuController {
 	
 	@FXML public void initialize() {
 	 	Timer timer = new Timer();
-		timer.schedule(new Timers(), 0 , 10000); //300000
+		timer.schedule(new Timers(), 0 , 300000); //300000
+		
+		getTime();
 		
 	}
 	
 	public void runPump()
 		{
-
-
-//			Timer timer = new Timer();
-//			timer.schedule(new Timers(), 0 , 30000); //300000
 
 			reading0 = 120; //for testing
 			reading1 = 100; //for testing
@@ -211,6 +212,14 @@ public class PatientMainMenuController {
 			}
 		}
 		
+		//Return the Date/Time
+		public void getTime() {
+		    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		    Date date = new Date();  
+		    //System.out.println(formatter.format(date));  
+		    DateTimeLbl.setText("Date & Time: " +formatter.format(date));
+		}
+		
 		//Timer Class & Methods - In charge of running the methods every t amount of miliseconds
 		public class Timers extends TimerTask{	
 
@@ -220,6 +229,7 @@ public class PatientMainMenuController {
 			runPump();
 			}
 		}
-
+		
+		
 
 }
