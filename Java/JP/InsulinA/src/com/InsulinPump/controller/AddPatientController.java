@@ -25,6 +25,9 @@ public class AddPatientController {
 =======
     @FXML private TextField txtPatientId, txtPatientFirstName, txtPatientLastName, txtPatientAddress, txtPatientBloodT , txtPatientPhoneNumber, txtPatientAge, txtPatientGender, txtPatientHeight, txtPatientWeight, txtPatientInsulinType, txtDoctorId;
     @FXML private Button btnAddNewPatient, btndoctorHomeButton;
+<<<<<<< HEAD
+>>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
+=======
 >>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
     public void newPatient(ActionEvent event) throws IOException{
     	
@@ -65,9 +68,14 @@ public class AddPatientController {
     	} catch (Exception e) {
     		System.out.println("Status: operation failed due to "+e);
 <<<<<<< HEAD
+<<<<<<< HEAD
 		}
     	
     	if(event.getSource() == btnAddNewPatient) {
+=======
+    	}
+			if(event.getSource() == btnAddNewPatient) {
+>>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
 =======
     	}
 			if(event.getSource() == btnAddNewPatient) {
@@ -90,7 +98,11 @@ public class AddPatientController {
 	        window.show();}
 	        }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
 =======
 }
 >>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
