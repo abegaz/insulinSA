@@ -1,18 +1,26 @@
 package com.InsulinPump.controller;
 
 import com.InsulinPump.model.*;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import application.InsulinPumpDBConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AddPatientController {
 
     @FXML private TextField txtPatientId, txtPatientFirstName, txtPatientLastName, txtPatientAddress, txtPatientBloodT , txtPatientPhoneNumber, txtPatientAge, txtPatientGender, txtPatientHeight, txtPatientWeight, txtPatientInsulinType, txtDoctorId;
-    
-    public void newPatient(ActionEvent event){
+    @FXML private Button btnAddNewPatient, btndoctorHomeButton;
+    public void newPatient(ActionEvent event) throws IOException{
     	
     	Patient newPatient = new Patient(txtPatientId.getText(),
     								txtPatientFirstName.getText(),
@@ -50,7 +58,23 @@ public class AddPatientController {
 			insertprofile.execute();
     	} catch (Exception e) {
     		System.out.println("Status: operation failed due to "+e);
-		}
-    	
+    	}
+			if(event.getSource() == btnAddNewPatient) {
+		    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/DoctorPage.fxml"));
+		    Scene tableViewScene = new Scene(tableViewParent);
+	        window.setScene(tableViewScene);
+	        window.show();
+			}
     }
+    
+    @FXML
+	public void changeSceneToDoctorHome(ActionEvent event) throws IOException {
+			if(event.getSource() == btndoctorHomeButton) {
+		    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+			Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/DoctorPage.fxml"));
+		    Scene tableViewScene = new Scene(tableViewParent);
+	        window.setScene(tableViewScene);
+	        window.show();}
+	        }
 }
