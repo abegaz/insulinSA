@@ -79,8 +79,8 @@ public class UserDataController {
        		rs = displayprofile.executeQuery();
        		// check to see if receiving any data
        		while (rs.next()){
-       			record.add(new Record(rs.getString("").toString(),rs.getString("").toString(),rs.getString("").toString(),rs.getString("").toString(),
-       					rs.getString("").toString(),rs.getString("").toString(),rs.getString("").toString());
+       			record.add(new Record(rs.getString("idRecords").toString(),rs.getString("dateTime").toString(),rs.getString("glucoseReading").toString(),rs.getString("insulinAmount").toString(),
+       					rs.getString("status").toString(),rs.getString("idPatient").toString(),rs.getString("idDoctor").toString()));
        		}
        	}catch(SQLException ex){
        		InsulinPumpDBConfig.displayException(ex);

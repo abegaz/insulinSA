@@ -1,11 +1,11 @@
 package com.InsulinPump.model;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Records {
+public class Record {
 
 	private SimpleStringProperty idRecords, dateTime, glucoseReading, insulinAmount, status, idPatient, idDoctor;
 	
-	public Records(String idRecords, String dateTime, String glucoseReading, String insulinAmount, String status, String idPatient, String idDoctor) {
+	public Record(String idRecords, String dateTime, String glucoseReading, String insulinAmount, String status, String idPatient, String idDoctor) {
 		this.idRecords  = new SimpleStringProperty(idRecords);
 		this.dateTime  = new SimpleStringProperty(dateTime);
 		this.glucoseReading  = new SimpleStringProperty(glucoseReading);
