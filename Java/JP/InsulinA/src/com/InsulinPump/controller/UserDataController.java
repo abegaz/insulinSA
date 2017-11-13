@@ -18,22 +18,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 
 public class UserDataController {
-	@FXML
-	private AnchorPane paneUserData;
-	@FXML
-	private TableView<?> tblPatientData;
-	@FXML
-	private TableColumn<?, ?> clnPatientId;
-	@FXML
-	private TableColumn<?, ?> clnReadingTime;
-	@FXML
-	private TableColumn<?, ?> clnGlucoseLevel;
-	@FXML
-	private TableColumn<?, ?> clnCurrentGlucose;
-	@FXML
-	private TableColumn<?, ?> clnHighLow;
-	@FXML
-	private JFXButton btnPatientMainMenu;
+	@FXML private AnchorPane paneUserData;
+	@FXML private TableView<?> tblPatientData;
+	@FXML private TableColumn<?, ?> clnPatientId;
+	@FXML private TableColumn<?, ?> clnReadingTime;
+	@FXML private TableColumn<?, ?> clnGlucoseLevel;
+	@FXML private TableColumn<?, ?> clnCurrentGlucose;
+	@FXML private TableColumn<?, ?> clnHighLow;
+	@FXML private JFXButton btnPatientMainMenu;
+	String ID;
 
 	@FXML
 	public void changeSceneToPatientHome(ActionEvent event) throws IOException {
@@ -44,4 +37,11 @@ public class UserDataController {
 	        window.setScene(tableViewScene);
 	        window.show();}
 	        }
+	
+	
+	public void setID(String setID){
+		ID = setID;
+	}	
+	
+	
 	}

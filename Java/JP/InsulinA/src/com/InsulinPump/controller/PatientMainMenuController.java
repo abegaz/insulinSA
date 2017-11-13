@@ -1,5 +1,6 @@
 package com.InsulinPump.controller;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
@@ -9,10 +10,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import application.InsulinPumpDBConfig;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class PatientMainMenuController {
 	
@@ -22,7 +27,7 @@ public class PatientMainMenuController {
 	@FXML Text batteryLevelLbl;
 	@FXML Text insulinLevelLbl;
 	@FXML Text DateTimeLbl;
-	@FXML Button btnBolus;
+	@FXML Button btnBolus, btnUserDataHistory;
 	
 	static int dose=0;
 
@@ -251,6 +256,18 @@ public class PatientMainMenuController {
 		public void setID(String setID){
 			ID = setID;
 		}
+		
+	    public void changeScenetoUserData(ActionEvent event) throws IOException
+	    {
+	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/UserData.fxml"));
+	    	Parent root = (Parent) loader.load();
+	    	
+	        UserDataController controller = loader.getController();
+	        controller.setID(ID);
+	        Stage stage = new Stage();
+	        stage.setScene(new Scene (root));
+	        stage.show();
+	    }
 		
 		
 
