@@ -36,9 +36,8 @@ public class UserDataController {
 	@FXML private TableColumn<Record, String> clnGlucoseLevel;
 	@FXML private TableColumn<Record, String> clnInsulinAdmin;
 	@FXML private TableColumn<Record, String> clnStatus;
-	@FXML private TableColumn<Record, String> clnDoctorName;
 	@FXML private JFXButton btnPatientMainMenu;
-	String ID;
+	String IDP;
 	
 @FXML public void initialize() {
 		
@@ -48,7 +47,6 @@ public class UserDataController {
 		clnGlucoseLevel.setCellValueFactory(new PropertyValueFactory<Record, String>("Glucose Level"));
 		clnInsulinAdmin.setCellValueFactory(new PropertyValueFactory<Record, String>("Insulin Dose"));
 		clnStatus.setCellValueFactory(new PropertyValueFactory<Record, String>("Status"));
-		clnDoctorName.setCellValueFactory(new PropertyValueFactory<Record, String>("Doctor"));
 
 		
 		tblPatientData.setItems(getRecordList());
@@ -67,8 +65,9 @@ public class UserDataController {
     public ObservableList<Record>  getRecordList(){
     	
     	ObservableList<Record> record = FXCollections.observableArrayList();
-
-        String SQLQuery = "SELECT * FROM records WHERE idPatient == '"+ID+"'ORDER BY dateTime ASC;"; //ADD WHERE idPatient == ''
+    	
+    	System.out.println(IDP);
+        String SQLQuery = "SELECT * FROM records WHERE idPatient = '"+IDP+"' ORDER BY dateTime ASC;"; //ADD WHERE idPatient == ''
        	ResultSet rs = null;
 
        	try(
@@ -106,7 +105,7 @@ public class UserDataController {
 	
 	
 	public void setID(String setID){
-		ID = setID;
+		IDP = setID;
 	}	
 	
 	

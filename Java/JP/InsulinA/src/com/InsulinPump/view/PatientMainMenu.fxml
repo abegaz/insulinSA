@@ -8,10 +8,11 @@
 
 <AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.PatientMainMenuController">
    <children>
-    <Button fx:id="btnUserDataHistory" onAction= "#changeScenetoUserData"layoutX="62.0" layoutY="266.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="259.0" text="My Data History">
+    <Button fx:id="btnUserDataHistory" onAction="#changeScenetoUserData" layoutX="62.0" layoutY="266.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="259.0" text="My Data History">
          <font>
             <Font name="Arial Bold" size="17.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Button fx:id="btnBolus" layoutX="62.0" layoutY="350.0" mnemonicParsing="false" onAction="#runPump" prefHeight="51.0" prefWidth="259.0" text="Bolus (Manual Injection)">
          <font>
             <Font name="Arial Bold" size="17.0" />

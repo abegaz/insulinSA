@@ -3,8 +3,6 @@ package com.InsulinPump.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.InsulinPump.model.Patient;
 import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;

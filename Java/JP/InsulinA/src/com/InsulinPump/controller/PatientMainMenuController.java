@@ -257,13 +257,17 @@ public class PatientMainMenuController {
 			ID = setID;
 		}
 		
+		public String getID() {
+			return ID;
+		}
+		
 	    public void changeScenetoUserData(ActionEvent event) throws IOException
 	    {
 	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/UserData.fxml"));
 	    	Parent root = (Parent) loader.load();
 	    	
-	        UserDataController controller = loader.getController();
-	        controller.setID(ID);
+	        UserDataController controllers = loader.getController();
+	        controllers.setID(getID());
 	        Stage stage = new Stage();
 	        stage.setScene(new Scene (root));
 	        stage.show();
