@@ -2,9 +2,13 @@ package com.InsulinPump.controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 
+import application.InsulinPumpDBConfig;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,14 +52,42 @@ public class LoginPageController implements Initializable {
 	// This method will redirect the scene into the patient TableView
     public void changeSceneToPatientMainMenu(ActionEvent event) throws IOException
     {
-    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/PatientMainMenu.fxml"));
-    	Parent root = (Parent) loader.load();
+   	
+    	ResultSet rs = null;
+    	String SQLQuery = "SELECT * FROM patient WHERE idPatient = ?;";
     	
-        PatientMainMenuController controller = loader.getController();
-        controller.setID(IDPatient.getText());
-        Stage stage = new Stage();
-        stage.setScene(new Scene (root));
-        stage.show();
+    	try(
+        	    Connection conn = InsulinPumpDBConfig.getConnection();
+        	    PreparedStatement displayid = conn.prepareStatement(SQLQuery);
+        	){	
+    			displayid.setString(1, IDPatient.getText());
+        	    rs = displayid.executeQuery();
+        	    
+        	    //If the result set found a match, continues
+        	    if(rs.next()) {
+        	    	
+        	    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/PatientMainMenu.fxml"));
+        	    	Parent root = (Parent) loader.load();
+        	        PatientMainMenuController controller = loader.getController();
+        	        controller.setID(IDPatient.getText());
+        	        Stage stage = new Stage();
+        	        stage.setScene(new Scene (root));
+        	        stage.show();
+        	    }
+        	    
+        	    //If not shows error
+        	    else {
+        	    		Alert alert = new Alert(AlertType.ERROR);
+        	    		alert.setTitle("Invalid Patient");
+        	    		alert.setHeaderText("Patient is Invalid");
+        	    		alert.setContentText("The Patient ID entered is not present in our current system, please enter a valid Patient ID");
+        	    		alert.showAndWait();
+        	    }
+        	    
+        	} catch (Exception e) {
+    			System.out.println("Status: operation failed due to "+e);
+
+    		}
     }
     
 	// This method will redirect the scene into the patient TableView
@@ -74,7 +106,8 @@ public class LoginPageController implements Initializable {
     	else {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setTitle("Username Error");
-    		alert.setHeaderText("Username/Password is invalid");
+    		alert.setHeaderText("Username Error");
+    		alert.setContentText("The Username/Password entered is invalid, please enter a valid Username/Password");
     		alert.showAndWait();
     	}
     }

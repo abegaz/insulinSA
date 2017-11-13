@@ -186,13 +186,18 @@ public class PatientMainMenuController {
 			InsulinLeft();
 			BatteryLevel();
 			
-        	String query = "INSERT INTO records (dateTime, glucoseReading, insulinAmount, status, idPatient, idDoctor) VALUES ('"+Time
-        			+"','"+reading2+"','"+dose+"','"+statusLbl.getText()+"','"+ID+"','1');";
+        	String query = "INSERT INTO records (dateTime, glucoseReading, insulinAmount, status, idPatient, idDoctor) VALUES (?,?,?,?,?,?);";
 
         	try(
         	    Connection conn = InsulinPumpDBConfig.getConnection();
         	    PreparedStatement updateprofile = conn.prepareStatement(query);
-        	){
+        	){	
+        		updateprofile.setString(1, Time);
+        		updateprofile.setString(2, ""+reading2);
+        		updateprofile.setString(3, ""+dose);
+        		updateprofile.setString(4, statusLbl.getText());
+        		updateprofile.setString(5, ID);
+        		updateprofile.setString(6, "1");
         	    updateprofile.execute();
         	    System.out.println("Record Created");
         	} catch (Exception e) {
