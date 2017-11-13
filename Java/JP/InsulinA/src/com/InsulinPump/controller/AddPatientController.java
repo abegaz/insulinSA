@@ -18,9 +18,14 @@ import javafx.stage.Stage;
 
 public class AddPatientController {
 
+<<<<<<< HEAD
 	  @FXML private TextField txtPatientId, txtPatientFirstName, txtPatientLastName, txtPatientAddress, txtPatientBloodT , txtPatientPhoneNumber, txtPatientAge, txtPatientGender, txtPatientHeight, txtPatientWeight, txtPatientInsulinType, txtDoctorId;
 	  @FXML private Button btnAddNewPatient, btndoctorHomeButton;
 	  
+=======
+    @FXML private TextField txtPatientId, txtPatientFirstName, txtPatientLastName, txtPatientAddress, txtPatientBloodT , txtPatientPhoneNumber, txtPatientAge, txtPatientGender, txtPatientHeight, txtPatientWeight, txtPatientInsulinType, txtDoctorId;
+    @FXML private Button btnAddNewPatient, btndoctorHomeButton;
+>>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
     public void newPatient(ActionEvent event) throws IOException{
     	
     	Patient newPatient = new Patient(txtPatientId.getText(),
@@ -59,9 +64,14 @@ public class AddPatientController {
 			insertprofile.execute();
     	} catch (Exception e) {
     		System.out.println("Status: operation failed due to "+e);
+<<<<<<< HEAD
 		}
     	
     	if(event.getSource() == btnAddNewPatient) {
+=======
+    	}
+			if(event.getSource() == btnAddNewPatient) {
+>>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48
 		    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 			Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/DoctorPage.fxml"));
 		    Scene tableViewScene = new Scene(tableViewParent);
@@ -79,4 +89,8 @@ public class AddPatientController {
 	        window.setScene(tableViewScene);
 	        window.show();}
 	        }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e0baa0fe896ade6f7de624628152ecf5315d3e48

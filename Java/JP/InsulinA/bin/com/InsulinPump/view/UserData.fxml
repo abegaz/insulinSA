@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="paneUserData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="paneUserData" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.UserDataController">
    <children>
       <TableView fx:id="tblPatientData" layoutY="200.0" prefHeight="467.0" prefWidth="1215.0" style="-fx-background-color: #fff;">
         <columns>
             <TableColumn fx:id="clnPatientId" prefWidth="220.00003051757812" text="Patient ID" />
           <TableColumn fx:id="clnReadingTime" prefWidth="213.0" text="Time of Reading" />
-          <TableColumn fx:id="clnGlucoseLevel" minWidth="0.0" prefWidth="275.0" text="Current Glucose Level (mg/dL)" />
-            <TableColumn fx:id="clnInsulin" minWidth="0.0" prefWidth="279.0" text="Amount of Inslin delivered (mg/dL)" />
-            <TableColumn fx:id="clnStatus" minWidth="0.0" prefWidth="227.0" text="Status" />
+          <TableColumn fx:id="clnGlucoseLevel" minWidth="0.0" prefWidth="275.0" text="Average Glucose Level (mg/dL)" />
+            <TableColumn fx:id="clnCurrentGlucose" minWidth="0.0" prefWidth="279.0" text="Current Glucose Level (mg/dL)" />
+            <TableColumn fx:id="clnHighLow" minWidth="0.0" prefWidth="227.0" text="High/Low" />
         </columns>
       </TableView>
       <AnchorPane prefHeight="200.0" prefWidth="1242.0" style="-fx-background-color: #000099;">
@@ -26,10 +27,15 @@
             </Text>
          </children>
       </AnchorPane>
-      <Text fontSmoothingType="LCD" layoutX="571.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©">
+      <Text fontSmoothingType="LCD" layoutX="571.0" layoutY="709.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©">
          <font>
             <Font name="Bell MT" size="9.0" />
          </font>
       </Text>
+      <JFXButton fx:id="btnPatientMainMenu" buttonType="RAISED" layoutX="14.0" layoutY="678.0" onAction="#changeSceneToPatientHome" style="-fx-background-color: #fff; -fx-border-color: #fff;" text="Home" textAlignment="CENTER">
+         <font>
+            <Font name="Bell MT Italic" size="13.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
