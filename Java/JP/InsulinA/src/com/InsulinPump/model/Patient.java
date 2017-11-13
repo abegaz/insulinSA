@@ -21,6 +21,10 @@ public class Patient {
 		
 	}
 	
+	public Patient(String patientID) {
+		this.patientID = new SimpleStringProperty(patientID);
+	}
+	
 	/* Start of GETTERS AND SETTERS */
 	public String getPatientId() {
 		return patientID.get();
@@ -121,7 +125,7 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
+		return  "Patient [firstName=" + patientID + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
 				+ ", height=" + height + ", weight=" + weight + ", insulinType=" + insulinType + "]";
 	}
 	

@@ -62,7 +62,6 @@ public class DoctorPageController {
 		cPhone.setCellValueFactory(new PropertyValueFactory<Patient, String>("phone"));
 		cDoctor.setCellValueFactory(new PropertyValueFactory<Patient, String>("doctorID"));
 		
-        //static data, will replace with the database record later
 		tableViewInfo.setItems(getPatientList());
 		
         /*//Update the table to allow for the first and last name fields to be editable
@@ -71,10 +70,7 @@ public class DoctorPageController {
         lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         addressColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         */
-        //This will allow the table to select multiple rows at once
 		tableViewInfo.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        //Disable the detailed Customer view button and the delete button until a row is selected
-        //this.detailedCustomerViewButton.setDisable(true);
         this.bDeletePatient.setDisable(true);
 	}
 	
@@ -112,7 +108,8 @@ public class DoctorPageController {
     	
     	ObservableList<Patient> patient = FXCollections.observableArrayList();
 
-        String SQLQuery = "SELECT idPatient, firstName, lastName, Address, bloodType, age, gender, height, weight, insulinType, phone, idDoctor FROM patient ORDER BY idPatient ASC;"; //ADD WHERE idPatient == ''
+    	//idPatient, firstName, lastName, Address, bloodType, age, gender, height, weight, insulinType, phone, idDoctor
+        String SQLQuery = "SELECT * FROM patient ORDER BY idPatient ASC;"; //ADD WHERE idPatient == ''
        	ResultSet rs = null;
 
        	try(

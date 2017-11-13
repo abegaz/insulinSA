@@ -1,12 +1,16 @@
 package com.InsulinPump.controller;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import application.InsulinPumpDBConfig;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
@@ -33,12 +37,11 @@ public class PatientMainMenuController {
 	static int vialAmount=50;
 	static int updatedVialAmount;
 	static int compDose=0;
+	String ID;
 	
 	@FXML public void initialize() {
 	 	Timer timer = new Timer();
 		timer.schedule(new Timers(), 0 , 300000); //300000
-		
-		getTime();
 		
 	}
 	
@@ -173,9 +176,24 @@ public class PatientMainMenuController {
 //			reading0=reading1;
 //			reading1=reading2;
 //			reading2=0;
-
+					
+			String Time = getTime();
 			InsulinLeft();
 			BatteryLevel();
+			
+        	String query = "INSERT INTO records (dateTime, glucoseReading, insulinAmount, status, idPatient, idDoctor) VALUES ('"+Time
+        			+"','"+reading2+"','"+dose+"','"+statusLbl.getText()+"','"+ID+"','1');";
+
+        	try(
+        	    Connection conn = InsulinPumpDBConfig.getConnection();
+        	    PreparedStatement updateprofile = conn.prepareStatement(query);
+        	){
+        	    updateprofile.execute();
+        	    System.out.println("Record Created");
+        	} catch (Exception e) {
+    			System.out.println("Status: operation failed due to "+e);
+
+    		}
 		}
 		public  void InsulinLeft() // Insulin left over in the reservour/vial.
 		{
@@ -212,12 +230,13 @@ public class PatientMainMenuController {
 			}
 		}
 		
-		//Return the Date/Time
-		public void getTime() {
+		//Display the Date/Time
+		public String getTime() {
 		    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
 		    Date date = new Date();  
 		    //System.out.println(formatter.format(date));  
 		    DateTimeLbl.setText("Date & Time: " +formatter.format(date));
+		    return formatter.format(date);
 		}
 		
 		//Timer Class & Methods - In charge of running the methods every t amount of miliseconds
@@ -225,9 +244,12 @@ public class PatientMainMenuController {
 
 			//this method performs the task
 			public void run () {
-			// need to automatically input yes in the test controller for check bs.
-			runPump();
+				runPump();
 			}
+		}
+		
+		public void setID(String setID){
+			ID = setID;
 		}
 		
 		

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.InsulinPump.model.Patient;
 import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
@@ -20,6 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
 public class LoginPageController implements Initializable {
 
 	@FXML
@@ -27,9 +29,10 @@ public class LoginPageController implements Initializable {
 	@FXML
 	private AnchorPane pn_patient1, pn_physician1;	
 	@FXML
-	private TextField TextUsername;
+	private TextField TextUsername, IDPatient;
 	@FXML
 	private PasswordField TextPassword;
+
 	
 	@FXML
 	private void handleUserChange(ActionEvent event) {
@@ -47,11 +50,14 @@ public class LoginPageController implements Initializable {
 	// This method will redirect the scene into the patient TableView
     public void changeSceneToPatientMainMenu(ActionEvent event) throws IOException
     {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/PatientMainMenu.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(tableViewScene);
-        window.show();
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/PatientMainMenu.fxml"));
+    	Parent root = (Parent) loader.load();
+    	
+        PatientMainMenuController controller = loader.getController();
+        controller.setID(IDPatient.getText());
+        Stage stage = new Stage();
+        stage.setScene(new Scene (root));
+        stage.show();
     }
     
 	// This method will redirect the scene into the patient TableView
