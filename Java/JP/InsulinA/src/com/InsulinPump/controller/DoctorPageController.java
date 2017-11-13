@@ -49,7 +49,7 @@ public class DoctorPageController {
 	@FXML public void initialize() {
 		
         //set up the columns in the table
-		cPatientId.setCellValueFactory(new PropertyValueFactory<Patient, String>("patientID"));
+		cPatientId.setCellValueFactory(new PropertyValueFactory<Patient, String>("idPatient"));
 		cFirstName.setCellValueFactory(new PropertyValueFactory<Patient, String>("firstName"));
 		cLastName.setCellValueFactory(new PropertyValueFactory<Patient, String>("lastName"));
 		cAddress.setCellValueFactory(new PropertyValueFactory<Patient, String>("address"));
@@ -60,16 +60,9 @@ public class DoctorPageController {
 		cWeight.setCellValueFactory(new PropertyValueFactory<Patient, String>("weight"));
 		cInsulinType.setCellValueFactory(new PropertyValueFactory<Patient, String>("insulinType"));
 		cPhone.setCellValueFactory(new PropertyValueFactory<Patient, String>("phone"));
-		cDoctor.setCellValueFactory(new PropertyValueFactory<Patient, String>("doctorID"));
+		cDoctor.setCellValueFactory(new PropertyValueFactory<Patient, String>("idDoctor"));
 		
 		tableViewInfo.setItems(getPatientList());
-		
-        /*//Update the table to allow for the first and last name fields to be editable
-		tableViewInfo.setEditable(true);
-        firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        addressColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        */
 		tableViewInfo.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         this.bDeletePatient.setDisable(true);
 	}
@@ -93,7 +86,7 @@ public class DoctorPageController {
         	    Connection conn = InsulinPumpDBConfig.getConnection();
         	    PreparedStatement updateprofile = conn.prepareStatement(query);
         	){
-        	updateprofile.setString(1, patient.getPatientId());
+        		updateprofile.setString(1, patient.getidPatient());
         	    updateprofile.executeUpdate();
         	} catch (Exception e) {
     			System.out.println("Status: operation failed due to "+e);

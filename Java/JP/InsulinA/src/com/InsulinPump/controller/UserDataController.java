@@ -39,42 +39,20 @@ public class UserDataController {
 	@FXML private JFXButton btnPatientMainMenu;
 	String IDP;
 	
-@FXML public void initialize() {
-		
-        //set up the columns in the table
-		clnRecordId.setCellValueFactory(new PropertyValueFactory<Record, String>("RecordID"));
-		clnReadingTime.setCellValueFactory(new PropertyValueFactory<Record, String>("ReadingTime"));
-		clnGlucoseLevel.setCellValueFactory(new PropertyValueFactory<Record, String>("Glucose Level"));
-		clnInsulinAdmin.setCellValueFactory(new PropertyValueFactory<Record, String>("Insulin Dose"));
-		clnStatus.setCellValueFactory(new PropertyValueFactory<Record, String>("Status"));
-
-		
-		tblPatientData.setItems(getRecordList());
-		
-        /*//Update the table to allow for the first and last name fields to be editable
-		tableViewInfo.setEditable(true);
-        firstNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        lastNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        addressColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        */
-		tblPatientData.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-	}
-    
+   
  // ObservableList: A list that enables listeners to track changes when they occur
     // The following  method will return an ObservableList of  object
     public ObservableList<Record>  getRecordList(){
     	
     	ObservableList<Record> record = FXCollections.observableArrayList();
-    	
-    	System.out.println(IDP);
-        String SQLQuery = "SELECT * FROM records WHERE idPatient = '"+IDP+"' ORDER BY dateTime ASC;"; //ADD WHERE idPatient == ''
+        String SQLQuery = "SELECT * FROM records WHERE idPatient = ? ORDER BY dateTime ASC;"; //ADD WHERE idPatient == ''
        	ResultSet rs = null;
 
        	try(
        			Connection conn = InsulinPumpDBConfig.getConnection();
        			PreparedStatement displayprofile = conn.prepareStatement(SQLQuery);
        	){
-       		//displayprofile.setInt(1, cutomerId);
+       		displayprofile.setString(1, IDP);
        		rs = displayprofile.executeQuery();
        		// check to see if receiving any data
        		while (rs.next()){
@@ -106,6 +84,16 @@ public class UserDataController {
 	
 	public void setID(String setID){
 		IDP = setID;
+		
+        //set up the columns in the table
+		clnRecordId.setCellValueFactory(new PropertyValueFactory<Record, String>("idRecords"));
+		clnReadingTime.setCellValueFactory(new PropertyValueFactory<Record, String>("dateTime"));
+		clnGlucoseLevel.setCellValueFactory(new PropertyValueFactory<Record, String>("glucoseReading"));
+		clnInsulinAdmin.setCellValueFactory(new PropertyValueFactory<Record, String>("InsulinAmount"));
+		clnStatus.setCellValueFactory(new PropertyValueFactory<Record, String>("Status"));	
+		tblPatientData.setItems(getRecordList());
+		
+		tblPatientData.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 	}	
 	
 	

@@ -3,10 +3,10 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Patient {
 
-	private SimpleStringProperty patientID, firstName, lastName, address, bloodType, age, gender, height, weight, insulinType, doctorID, phone;
+	private SimpleStringProperty idPatient, firstName, lastName, address, bloodType, age, gender, height, weight, insulinType, idDoctor, phone;
 	
-	public Patient(String patientID, String firstName, String lastName, String address, String bloodType, String age, String gender, String height, String weight, String insulinType, String phone, String doctorID ) {
-		this.patientID  = new SimpleStringProperty(patientID);
+	public Patient(String idPatient, String firstName, String lastName, String address, String bloodType, String age, String gender, String height, String weight, String insulinType, String phone, String idDoctor ) {
+		this.idPatient  = new SimpleStringProperty(idPatient);
 		this.firstName  = new SimpleStringProperty(firstName);
 		this.lastName  = new SimpleStringProperty(lastName);
 		this.address  = new SimpleStringProperty(address);
@@ -17,21 +17,21 @@ public class Patient {
 		this.weight  = new SimpleStringProperty(weight);
 		this.insulinType  = new SimpleStringProperty(insulinType);
 		this.phone  = new SimpleStringProperty(phone);
-		this.doctorID  = new SimpleStringProperty(doctorID);
+		this.idDoctor  = new SimpleStringProperty(idDoctor);
 		
 	}
 	
-	public Patient(String patientID) {
-		this.patientID = new SimpleStringProperty(patientID);
+	public Patient(String idPatient) {
+		this.idPatient = new SimpleStringProperty(idPatient);
 	}
 	
 	/* Start of GETTERS AND SETTERS */
-	public String getPatientId() {
-		return patientID.get();
+	public String getidPatient() {
+		return idPatient.get();
 	}
 
-	public void setPatientId(String patientID) {
-		this.patientID = new SimpleStringProperty(patientID);
+	public void setidPatient(String idPatient) {
+		this.idPatient = new SimpleStringProperty(idPatient);
 	}
 
 	public String getFirstName() {
@@ -114,18 +114,18 @@ public class Patient {
 		this.phone = new SimpleStringProperty(phone);
 	}
 	
-	public String getDoctorId() {
-		return doctorID.get();
+	public String getidDoctor() {
+		return idDoctor.get();
 	}
 
-	public void setDoctorId(String doctorID) {
-		this.doctorID = new SimpleStringProperty(doctorID);
+	public void setidDoctor(String idDoctor) {
+		this.idDoctor = new SimpleStringProperty(idDoctor);
 	}
 
 
 	@Override
 	public String toString() {
-		return  "Patient [firstName=" + patientID + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
+		return  "Patient [firstName=" + idPatient + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
 				+ ", height=" + height + ", weight=" + weight + ", insulinType=" + insulinType + "]";
 	}
 	

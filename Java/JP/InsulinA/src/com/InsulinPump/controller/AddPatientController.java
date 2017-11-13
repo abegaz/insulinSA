@@ -36,15 +36,13 @@ public class AddPatientController {
     								txtPatientInsulinType.getText(),
     								txtPatientPhoneNumber.getText(),
     								txtDoctorId.getText());
-    	
-    	System.out.println(newPatient.toString());
-    	
+    	    	
     	String query = "insert into patient " + "(idPatient, firstName, lastName, address, bloodType, age, gender, height, weight, insulinType, phone, idDoctor) " + "values(?,?,?,?,?,?,?,?,?,?,?,?)";
     	
     	try (Connection conn = InsulinPumpDBConfig.getConnection();
 				PreparedStatement insertprofile = conn.prepareStatement(query);) {
     		
-    		insertprofile.setString(1, newPatient.getPatientId());
+    		insertprofile.setString(1, newPatient.getidPatient());
 			insertprofile.setString(2, newPatient.getFirstName());
 			insertprofile.setString(3, newPatient.getLastName());
 			insertprofile.setString(4, newPatient.getAddress());
@@ -55,7 +53,7 @@ public class AddPatientController {
 			insertprofile.setString(9, newPatient.getWeight());
 			insertprofile.setString(10, newPatient.getInsulinType());
 			insertprofile.setString(11, newPatient.getPhone());
-			insertprofile.setString(12, newPatient.getDoctorId());
+			insertprofile.setString(12, newPatient.getidDoctor());
     		
 			insertprofile.execute();
     	} catch (Exception e) {
