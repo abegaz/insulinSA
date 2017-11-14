@@ -12,6 +12,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -137,6 +138,8 @@ public class DoctorPageController {
 	public void changeSceneToPatientInsert(ActionEvent event) throws IOException {
 			if(event.getSource() == addPatient) {
 		    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		    window.setTitle("Insulin Pump");
+		    window.getIcons().add(new Image("/com/InsulinPump/images/blueHeartbeat.png"));
 			Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/AddPatient.fxml"));
 		    Scene tableViewScene = new Scene(tableViewParent);
 	        window.setScene(tableViewScene);

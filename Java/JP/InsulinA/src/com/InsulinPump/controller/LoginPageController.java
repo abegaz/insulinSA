@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -71,6 +72,8 @@ public class LoginPageController implements Initializable {
         	        PatientMainMenuController controller = loader.getController();
         	        controller.setID(IDPatient.getText());
         	        Stage stage = new Stage();
+        	        stage.setTitle("Insulin Pump");
+        		    stage.getIcons().add(new Image("/com/InsulinPump/images/blueHeartbeat.png"));
         	        stage.setScene(new Scene (root));
         	        stage.show();
         	    }
@@ -100,6 +103,8 @@ public class LoginPageController implements Initializable {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/DoctorPage.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setTitle("Insulin Pump");
+	    window.getIcons().add(new Image("/com/InsulinPump/images/blueHeartbeat.png"));
         window.setScene(tableViewScene);
         window.show();
     	}

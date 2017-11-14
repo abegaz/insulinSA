@@ -1,8 +1,6 @@
 package com.InsulinPump.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,9 +19,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 
@@ -73,13 +68,10 @@ public class UserDataController {
     // Method used to enable the detailed view button on mouse click event
 	@FXML
 	public void changeSceneToPatientHome(ActionEvent event) throws IOException {
-			if(event.getSource() == btnPatientMainMenu) {
-		    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-			Parent tableViewParent = FXMLLoader.load(getClass().getResource("../../../com/InsulinPump/view/PatientMainMenu.fxml"));
-		    Scene tableViewScene = new Scene(tableViewParent);
-	        window.setScene(tableViewScene);
-	        window.show();}
-	        }
+		    Stage stage = (Stage)btnPatientMainMenu.getScene().getWindow();
+		    stage.close();
+		}
+	       
 	
 	
 	public void setID(String setID){
