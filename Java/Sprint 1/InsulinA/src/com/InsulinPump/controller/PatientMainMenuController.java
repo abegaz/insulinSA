@@ -25,7 +25,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class PatientMainMenuController {
-
+	
+	@FXML
+	Text foodLbl;
 	@FXML
 	Text statusLbl;
 	@FXML
@@ -99,6 +101,7 @@ public class PatientMainMenuController {
 		if (reading2 < safeMin) {
 			compDose = 0;
 			statusLbl.setText("Sugar is too low");
+			foodLbl.setText("stable food item");
 		}
 
 		/* Sugar is within safe range */
@@ -107,6 +110,7 @@ public class PatientMainMenuController {
 			if (reading2 <= reading1) {
 				compDose = 0;
 				statusLbl.setText("Sugar is stable or falling");
+				foodLbl.setText("Sugar is stable or falling food item");
 			}
 			// If sugar level increasing
 			else {
@@ -114,11 +118,13 @@ public class PatientMainMenuController {
 				if ((reading2 - reading1) < (reading1 - reading0)) {
 					compDose = 0;
 					statusLbl.setText("rate of increase is falling");
+					foodLbl.setText("rate of increase is falling/ food item");
 				}
 				// If rate of increase is increasing
 				else if ((reading2 - reading1) >= (reading1 - reading0)) {
 
 					statusLbl.setText("rate of increase is increasing");
+					foodLbl.setText("rate of increase is increasing/ food item");
 
 					// If dose is rounded to zero, deliver the min dose
 					if ((reading2 - reading1) / 40 == 0) {
@@ -136,11 +142,13 @@ public class PatientMainMenuController {
 		else if (reading2 > safeMax) {
 
 			statusLbl.setText("Sugar is High");
+			foodLbl.setText("Sugar is High/ food item");
 
 			// If Sugar level increasing
 			if (reading2 > reading1) {
 
 				statusLbl.setText("Sugar is High and increasing");
+				foodLbl.setText("Sugar is High and increasing/ food item");
 
 				// If dose is rounded to zero, deliver the min dose
 				if ((reading2 - reading1) / 40 == 0) {
@@ -158,15 +166,18 @@ public class PatientMainMenuController {
 			else if (reading2 < reading1) {
 
 				statusLbl.setText("Sugar level is falling");
+				foodLbl.setText("Sugar level is falling/ food item");
 
 				// If rate of decrease increasing
 				if ((reading2 - reading1) <= (reading1 - reading0)) {
 					statusLbl.setText("rate of decrease is increasing");
+					foodLbl.setText("rate of decrease is increasing/ food item");
 					compDose = 0;
 				}
 				// If rate of decrease decreasing
 				else {
 					statusLbl.setText("rate of decrease is decreasing");
+					foodLbl.setText("rate of decrease is decreasing/ food item");
 					compDose = minDose;
 				}
 			}
