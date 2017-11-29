@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="1196.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.DoctorPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.DoctorPageController">
    <children>
-      <AnchorPane layoutY="-7.0" prefHeight="590.0" prefWidth="1197.0" style="-fx-background-color: #fff;">
+      <AnchorPane layoutY="-4.0" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #fff;">
          <children>
-            <TableView fx:id="tableViewInfo" layoutX="2.0" layoutY="207.0" onMouseClicked="#mouseClickedOnTableView" prefHeight="266.0" prefWidth="1194.0" style="-fx-background-color: #fff;">
+            <TableView fx:id="tableViewInfo" layoutX="2.0" layoutY="207.0" onMouseClicked="#mouseClickedOnTableView" prefHeight="286.0" prefWidth="1200.0" style="-fx-background-color: #fff;">
                <columns>
                   <TableColumn fx:id="cPatientId" editable="false" prefWidth="75.99999696016312" resizable="false" text="Patient ID" />
                   <TableColumn fx:id="cFirstName" editable="false" prefWidth="77.59994506835938" resizable="false" text="First Name " />
@@ -27,16 +27,17 @@
                    <TableColumn fx:id="cDoctor" minWidth="0.0" prefWidth="132.8001708984375" text="DoctorID" />
                </columns>
             </TableView>
-            <Text fontSmoothingType="LCD" layoutX="541.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©" textAlignment="CENTER" wrappingWidth="153.2861328125">
+            <Text fontSmoothingType="LCD" layoutX="544.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump ©" textAlignment="CENTER" wrappingWidth="153.2861328125">
                <font>
                   <Font size="9.0" />
                </font>
             </Text>
-            <Button fx:id="addPatient" layoutX="363.0" layoutY="495.0" mnemonicParsing="false" onAction="#changeSceneToPatientInsert" prefHeight="31.0" prefWidth="153.0" text="Add Patient" />
-            <Button fx:id="bDeletePatient" layoutX="714.0" layoutY="495.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="31.0" prefWidth="153.0" text="Delete Patient" />
+            <Button fx:id="addPatient" layoutX="374.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeSceneToPatientInsert" prefHeight="31.0" prefWidth="153.0" text="Add Patient" />
+            <Button fx:id="bDeletePatient" layoutX="712.0" layoutY="510.0" mnemonicParsing="false" onAction="#deleteButtonPushed" prefHeight="31.0" prefWidth="153.0" text="Delete Patient" />
+            <Button fx:id="patientRecords" layoutX="544.0" layoutY="510.0" mnemonicParsing="false" onAction="#changeSceneToPatientRecords" prefHeight="31.0" prefWidth="153.0" text="Patient Records" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="1197.0" style="-fx-background-color: #000099;">
+      <AnchorPane prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #000099;">
          <children>
             <Text fill="WHITE" fontSmoothingType="LCD" layoutX="481.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician Homepage">
                <font>

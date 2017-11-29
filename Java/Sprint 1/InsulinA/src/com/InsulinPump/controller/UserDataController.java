@@ -40,7 +40,7 @@ public class UserDataController {
     public ObservableList<Record>  getRecordList(){
     	
     	ObservableList<Record> record = FXCollections.observableArrayList();
-        String SQLQuery = "SELECT * FROM records WHERE idPatient = ? ORDER BY idRecords DESC;"; //ADD WHERE idPatient == ''
+        String SQLQuery = "SELECT * FROM records WHERE idPatient = ? ORDER BY idRecords DESC;"; //ADD WHERE idPatient = ''
        	ResultSet rs = null;
 
        	try(

@@ -43,9 +43,9 @@ public class DoctorPageController {
 	    @FXML private TableColumn<Patient, String> cInsulinType;
 	    @FXML private TableColumn<Patient, String> cPhone;
 	    @FXML private TableColumn<Patient, String> cDoctor;
-	    
-	    @FXML private Button addPatient;
-	    @FXML private Button bDeletePatient;
+		String ID;
+
+	    @FXML private Button addPatient, bDeletePatient, patientRecords;
 	
 	@FXML public void initialize() {
 		
@@ -64,7 +64,7 @@ public class DoctorPageController {
 		cDoctor.setCellValueFactory(new PropertyValueFactory<Patient, String>("idDoctor"));
 		
 		tableViewInfo.setItems(getPatientList());
-		tableViewInfo.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+		tableViewInfo.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         this.bDeletePatient.setDisable(true);
 	}
 	
@@ -145,6 +145,36 @@ public class DoctorPageController {
 	        window.setScene(tableViewScene);
 	        window.show();
 	        }
+	}
+	public void setID(String setID) {
+		ID = setID;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void changeSceneToPatientRecords() throws IOException {
+        ObservableList<Patient> selectedRows, allPatient;
+        allPatient = tableViewInfo.getItems();
+
+        //this gives us the rows that were selected
+        selectedRows = tableViewInfo.getSelectionModel().getSelectedItems();
+        for (Patient patient: selectedRows)
+        {
+            setID(patient.getidPatient());
+        }
+        
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/UserData.fxml"));
+		Parent root = (Parent) loader.load();
+		
+		UserDataController controllers = loader.getController();
+		controllers.setID(getID());
+		Stage stage = new Stage();
+		stage.setTitle("Insulin Pump");
+		stage.getIcons().add(new Image("/com/InsulinPump/images/blueHeartbeat.png"));
+		stage.setScene(new Scene(root));
+		stage.show();
 	}
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub

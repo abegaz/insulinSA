@@ -13,11 +13,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="700.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.PatientMainMenuController">
    <children>
-    <Button fx:id="btnUserDataHistory" layoutX="415.0" layoutY="274.0" mnemonicParsing="false" onAction="#changeScenetoUserData" prefHeight="40.0" prefWidth="132.0" text="My Data History">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-      </Button>
       <Button fx:id="btnBolus" layoutX="415.0" layoutY="217.0" mnemonicParsing="false" onAction="#runPump" prefHeight="40.0" prefWidth="183.0" text="Bolus (Manual Injection)">
          <font>
             <Font name="Arial Bold" size="14.0" />
