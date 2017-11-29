@@ -71,14 +71,17 @@ public class PatientMainMenuController {
 
 	@FXML
 	private void loadChart(ActionEvent event) {
+		//CREATES CHART FROM DATABASE RECORDS	
 		lineChart.getData().clear();
-		String query2 = "SELECT dateTime,glucoseReading FROM records ORDER BY dateTime ASC";
+		
+		String query2 = "SELECT dateTime,glucoseReading FROM records WHERE idPatient = ? ORDER BY dateTime ASC LIMIT 5;";
 		XYChart.Series<String, Double> series = new XYChart.Series<>();
 		series.setName("Glucose Level");
 
-		try {
-			Connection conn2 = InsulinPumpDBConfig.getConnection();
-			ResultSet rs = conn2.createStatement().executeQuery(query2);
+		try (Connection conn = InsulinPumpDBConfig.getConnection(); PreparedStatement updateprofile = conn.prepareStatement(query2);){
+			updateprofile.setString(1, ID);
+			
+			ResultSet rs = updateprofile.executeQuery();
 			while (rs.next()) {
 				series.getData().add(new XYChart.Data<>(rs.getString(1), rs.getDouble(2)));
 			}
