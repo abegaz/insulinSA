@@ -1,5 +1,6 @@
 package com.InsulinPump.controller;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +10,8 @@ import java.util.Date;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JLabel;
 
 import application.InsulinPumpDBConfig;
 import javafx.event.ActionEvent;
@@ -103,8 +106,10 @@ public class PatientMainMenuController {
 		/* Sugar reading is low */
 		if (reading2 < safeMin) {
 			compDose = 0;
-			statusLbl.setText("Sugar is too low");
-			foodLbl.setText("Eat a scone to increase blood sugar");
+			JLabel statusLbl = new JLabel("Sugar is too low");
+			statusLbl.setForeground(Color.RED);
+			JLabel foodLbl = new JLabel("Eat a scone to increase blood sugar");
+			foodLbl.setForeground(Color.RED);
 		}
 
 		/* Sugar is within safe range */
@@ -112,22 +117,29 @@ public class PatientMainMenuController {
 			// If sugar level is stable or falling
 			if (reading2 <= reading1) {
 				compDose = 0;
-				statusLbl.setText("Sugar is stable or falling");
-				foodLbl.setText("No need to eat any food");
+				JLabel statusLbl = new JLabel("Sugar is stable or falling");
+				statusLbl.setForeground(Color.GREEN);
+				JLabel foodLbl = new JLabel("No need to eat any food");
+				foodLbl.setForeground(Color.GREEN);
 			}
 			// If sugar level increasing
 			else {
 				// If rate of increase is falling
 				if ((reading2 - reading1) < (reading1 - reading0)) {
 					compDose = 0;
-					statusLbl.setText("rate of increase is falling");
-					foodLbl.setText("Eat hummus to stabilize rate of increase");
+					JLabel statusLbl = new JLabel("rate of increase is falling");
+					statusLbl.setForeground(Color.YELLOW);
+					JLabel foodLbl = new JLabel("Eat hummus to stabilize rate of increase");
+					foodLbl.setForeground(Color.YELLOW);
+		
 				}
 				// If rate of increase is increasing
 				else if ((reading2 - reading1) >= (reading1 - reading0)) {
 
-					statusLbl.setText("rate of increase is increasing");
-					foodLbl.setText("Eat peanuts to stablize rate of increase");
+					JLabel statusLbl = new JLabel("rate of increase is increasing");
+					statusLbl.setForeground(Color.YELLOW);
+					JLabel foodLbl = new JLabel("Eat peanuts to stablize rate of increase");
+					foodLbl.setForeground(Color.YELLOW);
 
 					// If dose is rounded to zero, deliver the min dose
 					if ((reading2 - reading1) / 40 == 0) {
@@ -144,15 +156,20 @@ public class PatientMainMenuController {
 		/* Sugar is High */
 		else if (reading2 > safeMax) {
 
-			statusLbl.setText("Sugar is High");
-			foodLbl.setText("Eat some ginger to decrease blood sugar");
+			JLabel statusLbl = new JLabel("Sugar is High");
+			statusLbl.setForeground(Color.RED);
+			JLabel foodLbl = new JLabel("Eat some ginger to decrease blood sugar");
+			foodLbl.setForeground(Color.RED);
 
 			// If Sugar level increasing
 			if (reading2 > reading1) {
 
 				statusLbl.setText("Sugar is High and increasing");
-				foodLbl.setText("Eat some yogurt to decrease and stablize blood sugar");
+				statusLbl.setForeground(Color.RED);
 
+				foodLbl.setText("Eat some yogurt to decrease and stablize blood sugar");
+				foodLbl.setForeground(Color.RED);
+				
 				// If dose is rounded to zero, deliver the min dose
 				if ((reading2 - reading1) / 40 == 0) {
 					compDose = minDose;
@@ -169,7 +186,10 @@ public class PatientMainMenuController {
 			else if (reading2 < reading1) {
 
 				statusLbl.setText("Sugar level is falling");
+				statusLbl.setForeground(Color.YELLOW);
+
 				foodLbl.setText("Eat a bran muffin to increase and stablize blood sugar");
+				foodLbl.setForeground(Color.YELLOW);
 
 				// If rate of decrease increasing
 				if ((reading2 - reading1) <= (reading1 - reading0)) {
@@ -180,7 +200,11 @@ public class PatientMainMenuController {
 				// If rate of decrease decreasing
 				else {
 					statusLbl.setText("rate of decrease is decreasing");
+					statusLbl.setForeground(Color.YELLOW);
+
 					foodLbl.setText("Eat oatmeal to stablize rate of decrease");
+					foodLbl.setForeground(Color.YELLOW);
+
 					compDose = minDose;
 				}
 			}
