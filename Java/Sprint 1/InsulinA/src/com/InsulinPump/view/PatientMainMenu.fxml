@@ -11,38 +11,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.PatientMainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="700.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.PatientMainMenuController">
    <children>
-    <Button fx:id="btnUserDataHistory" layoutX="126.0" layoutY="435.0" mnemonicParsing="false" onAction="#changeScenetoUserData" prefHeight="51.0" prefWidth="259.0" text="My Data History">
+    <Button fx:id="btnUserDataHistory" layoutX="415.0" layoutY="274.0" mnemonicParsing="false" onAction="#changeScenetoUserData" prefHeight="40.0" prefWidth="132.0" text="My Data History">
          <font>
-            <Font name="Arial Bold" size="17.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btnBolus" layoutX="126.0" layoutY="515.0" mnemonicParsing="false" onAction="#runPump" prefHeight="51.0" prefWidth="259.0" text="Bolus (Manual Injection)">
+      <Button fx:id="btnBolus" layoutX="415.0" layoutY="217.0" mnemonicParsing="false" onAction="#runPump" prefHeight="40.0" prefWidth="183.0" text="Bolus (Manual Injection)">
          <font>
-            <Font name="Arial Bold" size="17.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="308.0" layoutY="602.0" prefHeight="17.0" prefWidth="259.0" text="Battery Level">
+      <Label alignment="CENTER" layoutX="26.0" layoutY="415.0" prefHeight="30.0" prefWidth="148.0" text="Battery Level">
          <font>
-            <Font name="Bell MT Bold" size="30.0" />
+            <Font name="Bell MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="634.0" layoutY="602.0" prefHeight="17.0" prefWidth="259.0" text="Insulin Level" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="28.0" layoutY="349.0" prefHeight="22.0" prefWidth="148.0" text="Insulin Level" textAlignment="CENTER">
          <font>
-            <Font name="Bell MT Bold" size="30.0" />
+            <Font name="Bell MT Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="clockAndDatelbl" alignment="CENTER" layoutX="29.0" layoutY="215.0" prefHeight="29.0" prefWidth="454.0">
+      <Label fx:id="clockAndDatelbl" alignment="CENTER" layoutX="29.0" layoutY="215.0" prefHeight="35.0" prefWidth="118.0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <AnchorPane prefHeight="200.0" prefWidth="1222.0" style="-fx-background-color: #000099;">
+      <AnchorPane prefHeight="200.0" prefWidth="700.0" style="-fx-background-color: #000099;">
          <children>
-            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="373.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Homepage">
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="201.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Homepage" wrappingWidth="627.515625">
                <font>
-                  <Font name="Bell MT" size="60.0" />
+                  <Font name="Bell MT" size="48.0" />
                </font>
             </Text>
          </children>
@@ -52,25 +52,25 @@
             <Font name="Bell MT" size="9.0" />
          </font>
       </Text>
-      <Text fx:id="statusLbl" fontSmoothingType="LCD" layoutX="92.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Blood Sugar Status" wrappingWidth="328.99999022483826">
+      <Text fx:id="statusLbl" fontSmoothingType="LCD" layoutX="29.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Blood Sugar Status" wrappingWidth="182.59996581077576">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font></Text>
-      <Text fx:id="insulinDoseLbl" fontSmoothingType="LCD" layoutX="91.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administered Dose" wrappingWidth="328.99999022483826">
+      <Text fx:id="insulinDoseLbl" fontSmoothingType="LCD" layoutX="32.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administered Dose" wrappingWidth="125.799978017807">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font></Text>
-      <Text fx:id="currentLevelLbl" fontSmoothingType="LCD" layoutX="92.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Blood Sugar" wrappingWidth="328.9999854564667">
+      <Text fx:id="currentLevelLbl" fontSmoothingType="LCD" layoutX="29.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Blood Sugar" wrappingWidth="132.19999766349792">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font></Text>
       <Text fx:id="batteryLevelLbl" layoutX="364.0" layoutY="594.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.6708984375" />
       <Text fx:id="insulinLevelLbl" layoutX="690.0" layoutY="595.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.67089247703552" />
-      <Text fx:id="DateTimeLbl" fontSmoothingType="LCD" layoutX="29.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time:" wrappingWidth="454.3945375084877">
+      <Text fx:id="DateTimeLbl" fontSmoothingType="LCD" layoutX="29.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date &amp; Time:" wrappingWidth="163.9945130944252">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font></Text>
-      <LineChart fx:id="lineChart" layoutX="560.0" layoutY="274.0" prefHeight="292.0" prefWidth="593.0">
+      <LineChart fx:id="lineChart" layoutX="400.0" layoutY="315.0" prefHeight="200.0" prefWidth="300.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -78,20 +78,20 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <Button fx:id="btnLoad" layoutX="767.0" layoutY="229.0" mnemonicParsing="false" onAction="#loadChart" prefHeight="27.0" prefWidth="253.0" text="LOAD" />
-      <ProgressBar fx:id="batteryProgressBar" layoutX="338.0" layoutY="647.0" prefWidth="200.0" progress="1.0">
+      <Button fx:id="btnLoad" layoutX="590.0" layoutY="287.0" mnemonicParsing="false" onAction="#loadChart" prefHeight="10.0" prefWidth="100.0" text="LOAD" />
+      <ProgressBar fx:id="batteryProgressBar" layoutX="28.0" layoutY="453.0" prefHeight="18.0" prefWidth="148.0" progress="1.0">
          <effect>
             <DropShadow />
          </effect>
       </ProgressBar>
-      <ProgressBar fx:id="insulinProgressBar" layoutX="664.0" layoutY="647.0" prefWidth="200.0" progress="1.0">
+      <ProgressBar fx:id="insulinProgressBar" layoutX="28.0" layoutY="380.0" prefHeight="18.0" prefWidth="148.0" progress="1.0">
          <effect>
             <DropShadow />
          </effect>
       </ProgressBar>
-      <Text fx:id="foodLbl" layoutX="88.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Food" wrappingWidth="335.673828125">
+      <Text fx:id="foodLbl" layoutX="32.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Food" wrappingWidth="140.47381591796875">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Text>
    </children>
