@@ -66,6 +66,7 @@ public class DoctorPageController {
 		tableViewInfo.setItems(getPatientList());
 		tableViewInfo.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         this.bDeletePatient.setDisable(true);
+        this.patientRecords.setDisable(true);
 	}
 	
 	// This method removes one or more selected row(s) from the TableView
@@ -131,7 +132,7 @@ public class DoctorPageController {
     // Method used to enable the detailed view button on mouse click event
     public void mouseClickedOnTableView(){
          	this.bDeletePatient.setDisable(false);
-           //this.deleteCustomerButton.setDisable(false);
+         	this.patientRecords.setDisable(false);
        }
 	
 	@FXML
@@ -155,16 +156,19 @@ public class DoctorPageController {
 	}
 
 	public void changeSceneToPatientRecords() throws IOException {
-        ObservableList<Patient> selectedRows, allPatient;
+       
+		ObservableList<Patient> selectedRows, allPatient;
         allPatient = tableViewInfo.getItems();
 
         //this gives us the rows that were selected
         selectedRows = tableViewInfo.getSelectionModel().getSelectedItems();
+        
         for (Patient patient: selectedRows)
         {
             setID(patient.getidPatient());
         }
         
+        //Changes Panels and Passes USER ID for Query
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../com/InsulinPump/view/UserData.fxml"));
 		Parent root = (Parent) loader.load();
 		
