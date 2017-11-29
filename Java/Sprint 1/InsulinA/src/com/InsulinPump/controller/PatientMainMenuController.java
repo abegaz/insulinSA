@@ -101,7 +101,7 @@ public class PatientMainMenuController {
 		if (reading2 < safeMin) {
 			compDose = 0;
 			statusLbl.setText("Sugar is too low");
-			foodLbl.setText("stable food item");
+			foodLbl.setText("Eat a scone to increase blood sugar");
 		}
 
 		/* Sugar is within safe range */
@@ -110,7 +110,7 @@ public class PatientMainMenuController {
 			if (reading2 <= reading1) {
 				compDose = 0;
 				statusLbl.setText("Sugar is stable or falling");
-				foodLbl.setText("Sugar is stable or falling food item");
+				foodLbl.setText("No need to eat any food");
 			}
 			// If sugar level increasing
 			else {
@@ -118,13 +118,13 @@ public class PatientMainMenuController {
 				if ((reading2 - reading1) < (reading1 - reading0)) {
 					compDose = 0;
 					statusLbl.setText("rate of increase is falling");
-					foodLbl.setText("rate of increase is falling/ food item");
+					foodLbl.setText("Eat hummus to stabilize rate of increase");
 				}
 				// If rate of increase is increasing
 				else if ((reading2 - reading1) >= (reading1 - reading0)) {
 
 					statusLbl.setText("rate of increase is increasing");
-					foodLbl.setText("rate of increase is increasing/ food item");
+					foodLbl.setText("Eat peanuts to stablize rate of increase");
 
 					// If dose is rounded to zero, deliver the min dose
 					if ((reading2 - reading1) / 40 == 0) {
@@ -142,13 +142,13 @@ public class PatientMainMenuController {
 		else if (reading2 > safeMax) {
 
 			statusLbl.setText("Sugar is High");
-			foodLbl.setText("Sugar is High/ food item");
+			foodLbl.setText("Eat some ginger to decrease blood sugar");
 
 			// If Sugar level increasing
 			if (reading2 > reading1) {
 
 				statusLbl.setText("Sugar is High and increasing");
-				foodLbl.setText("Sugar is High and increasing/ food item");
+				foodLbl.setText("Eat some yogurt to decrease and stablize blood sugar");
 
 				// If dose is rounded to zero, deliver the min dose
 				if ((reading2 - reading1) / 40 == 0) {
@@ -166,18 +166,18 @@ public class PatientMainMenuController {
 			else if (reading2 < reading1) {
 
 				statusLbl.setText("Sugar level is falling");
-				foodLbl.setText("Sugar level is falling/ food item");
+				foodLbl.setText("Eat a bran muffin to increase and stablize blood sugar");
 
 				// If rate of decrease increasing
 				if ((reading2 - reading1) <= (reading1 - reading0)) {
 					statusLbl.setText("rate of decrease is increasing");
-					foodLbl.setText("rate of decrease is increasing/ food item");
+					foodLbl.setText("Eat a corn muffin to stablize rate of decrease");
 					compDose = 0;
 				}
 				// If rate of decrease decreasing
 				else {
 					statusLbl.setText("rate of decrease is decreasing");
-					foodLbl.setText("rate of decrease is decreasing/ food item");
+					foodLbl.setText("Eat oatmeal to stablize rate of decrease");
 					compDose = minDose;
 				}
 			}
