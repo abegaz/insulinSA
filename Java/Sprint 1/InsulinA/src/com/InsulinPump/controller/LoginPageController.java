@@ -75,6 +75,7 @@ public class LoginPageController implements Initializable {
         	        stage.setTitle("Insulin Pump");
         		    stage.getIcons().add(new Image("/com/InsulinPump/images/blueHeartbeat.png"));
         	        stage.setScene(new Scene (root));
+        		    stage.setResizable(false);
         	        stage.show();
         	    }
         	    

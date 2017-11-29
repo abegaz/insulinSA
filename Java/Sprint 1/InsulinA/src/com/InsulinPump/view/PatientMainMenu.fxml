@@ -38,7 +38,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <AnchorPane prefHeight="200.0" prefWidth="1200.0" style="-fx-background-color: #000099;">
+      <AnchorPane prefHeight="200.0" prefWidth="1222.0" style="-fx-background-color: #000099;">
          <children>
             <Text fill="WHITE" fontSmoothingType="LCD" layoutX="373.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Homepage">
                <font>
