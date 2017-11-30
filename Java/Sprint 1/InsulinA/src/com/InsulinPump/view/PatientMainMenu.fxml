@@ -65,7 +65,7 @@
          <font>
             <Font size="16.0" />
          </font></Text>
-      <LineChart fx:id="lineChart" layoutX="555.0" layoutY="252.0" prefHeight="200.0" prefWidth="296.0">
+      <LineChart fx:id="lineChart" layoutX="391.0" layoutY="208.0" prefHeight="237.0" prefWidth="495.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -73,7 +73,7 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <Button fx:id="btnLoad" layoutX="653.0" layoutY="217.0" mnemonicParsing="false" onAction="#loadChart" prefHeight="10.0" prefWidth="100.0" text="Load Graph" />
+      <Button fx:id="btnLoad" layoutX="600.0" layoutY="454.0" mnemonicParsing="false" onAction="#loadChart" prefHeight="10.0" prefWidth="100.0" text="Load Graph" />
       <ProgressBar fx:id="batteryProgressBar" layoutX="481.0" layoutY="550.0" prefHeight="18.0" prefWidth="148.0" progress="1.0">
          <effect>
             <DropShadow />
