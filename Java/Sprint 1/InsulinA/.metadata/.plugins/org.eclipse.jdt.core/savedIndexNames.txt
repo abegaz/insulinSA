@@ -1,5 +1,0 @@
-INDEX VERSION 1.130+C:\Users\laura\Desktop\InsulinA\.metadata\.plugins\org.eclipse.jdt.core
-4024686425.index
-3384513373.index
-4110538242.index
-2545528454.index

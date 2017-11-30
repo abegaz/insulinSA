@@ -20,6 +20,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 
 public class PatientMainMenuController {
@@ -104,6 +105,8 @@ public class PatientMainMenuController {
 		if (reading2 < safeMin) {
 			compDose = 0;
 			statusLbl.setText("Sugar is too low");
+			Paint orange = javafx.scene.paint.Color.ORANGE;
+			statusLbl.setFill(orange);
 			
 			foodLbl.setText("Eat a scone to increase blood sugar");
 		}
@@ -114,6 +117,8 @@ public class PatientMainMenuController {
 			if (reading2 <= reading1) {
 				compDose = 0;
 				statusLbl.setText("Sugar is stable or falling");
+				Paint green = javafx.scene.paint.Color.GREEN;
+				statusLbl.setFill(green);
 				
 				foodLbl.setText("No need to eat any food");
 			}
@@ -123,6 +128,8 @@ public class PatientMainMenuController {
 				if ((reading2 - reading1) < (reading1 - reading0)) {
 					compDose = 0;
 					statusLbl.setText("rate of increase is falling");
+					Paint orange = javafx.scene.paint.Color.ORANGE;
+					statusLbl.setFill(orange);
 					
 					foodLbl.setText("Eat hummus to stabilize rate of increase");
 		
@@ -131,6 +138,8 @@ public class PatientMainMenuController {
 				else if ((reading2 - reading1) >= (reading1 - reading0)) {
 
 					statusLbl.setText("rate of increase is increasing");
+					Paint orange = javafx.scene.paint.Color.ORANGE;
+					statusLbl.setFill(orange);
 					
 					foodLbl.setText("Eat peanuts to stablize rate of increase");
 		
@@ -150,6 +159,8 @@ public class PatientMainMenuController {
 		else if (reading2 > safeMax) {
 
 			statusLbl.setText("Sugar is High");
+			Paint red = javafx.scene.paint.Color.RED;
+			statusLbl.setFill(red);
 			
 			foodLbl.setText("Eat some ginger to decrease blood sugar");
 
@@ -158,6 +169,8 @@ public class PatientMainMenuController {
 			if (reading2 > reading1) {
 
 				statusLbl.setText("Sugar is High and increasing");
+				Paint orange = javafx.scene.paint.Color.ORANGE;
+				statusLbl.setFill(orange);
 				
 				foodLbl.setText("Eat some yogurt to decrease and stablize blood sugar");
 				
@@ -177,12 +190,15 @@ public class PatientMainMenuController {
 			else if (reading2 < reading1) {
 
 				statusLbl.setText("Sugar level is falling");
+				Paint orange = javafx.scene.paint.Color.ORANGE;
+				statusLbl.setFill(orange);
 				
 				foodLbl.setText("Eat a bran muffin to increase and stablize blood sugar");
 
 				// If rate of decrease increasing
 				if ((reading2 - reading1) <= (reading1 - reading0)) {
 					statusLbl.setText("rate of decrease is increasing");
+					statusLbl.setFill(orange);
 
 					foodLbl.setText("Eat a corn muffin to stablize rate of decrease");
 					compDose = 0;
@@ -190,6 +206,7 @@ public class PatientMainMenuController {
 				// If rate of decrease decreasing
 				else {
 					statusLbl.setText("rate of decrease is decreasing");
+					statusLbl.setFill(orange);
 
 					foodLbl.setText("Eat oatmeal to stablize rate of decrease");
 
@@ -287,7 +304,7 @@ public class PatientMainMenuController {
 	}
 
 	// Timer Class & Methods - In charge of running the methods every t amount of
-	// miliseconds
+	// milliseconds
 	public class Timers extends TimerTask {
 
 		// this method performs the task
