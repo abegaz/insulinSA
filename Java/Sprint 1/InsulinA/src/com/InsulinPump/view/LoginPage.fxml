@@ -11,10 +11,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.LoginPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.InsulinPump.controller.LoginPageController">
    <children>
       <AnchorPane style="-fx-background-color: #fff;">
          <children>
+            <AnchorPane fx:id="pn_physician1" layoutX="630.0" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Text fontSmoothingType="LCD" layoutX="66.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician Portal" textAlignment="CENTER" wrappingWidth="347.00001046061516">
+                     <font>
+                        <Font name="Bell MT" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" layoutX="151.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="177.00001001358032">
+                     <font>
+                        <Font name="Bell MT" size="34.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" layoutX="123.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your username and password to login and continue" textAlignment="CENTER" wrappingWidth="234.99999475479126">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="TextUsername" layoutX="132.0" layoutY="275.0" prefHeight="31.0" prefWidth="218.0" promptText="Username" />
+                  <PasswordField fx:id="TextPassword" layoutX="133.0" layoutY="321.0" prefHeight="31.0" prefWidth="218.0" promptText="Password" />
+                  <Button layoutX="197.0" layoutY="391.0" mnemonicParsing="false" onAction="#changeSceneToDoctorPage" prefHeight="31.0" prefWidth="89.0" text="Login" />
+               </children>
+            </AnchorPane>
             <JFXButton fx:id="btn_physician1" layoutY="310.0" onAction="#handleUserChange" prefHeight="60.0" prefWidth="177.0" ripplerFill="BLACK" text="Physician">
                <font>
                   <Font size="18.0" />
@@ -23,28 +45,6 @@
                <font>
                   <Font size="18.0" />
                </font></JFXButton>
-            <AnchorPane fx:id="pn_physician1" layoutX="630.0" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #fff;">
-               <children>
-                  <Text fontSmoothingType="LCD" layoutX="66.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Physician Portal" textAlignment="CENTER" wrappingWidth="347.00001046061516">
-                     <font>
-                        <Font name="Bell MT" size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fontSmoothingType="LCD" layoutX="151.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="177.00001001358032">
-                     <font>
-                        <Font name="Bell MT" size="34.0" />
-                     </font>
-                  </Text>
-                  <Text fontSmoothingType="LCD" layoutX="123.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your username and password to login and continue" textAlignment="CENTER" wrappingWidth="234.99999475479126">
-                     <font>
-                        <Font size="11.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="TextUsername" layoutX="132.0" layoutY="364.0" prefHeight="31.0" prefWidth="218.0" promptText="Username" />
-                  <PasswordField fx:id="TextPassword" layoutX="133.0" layoutY="410.0" prefHeight="31.0" prefWidth="218.0" promptText="Password" />
-                  <Button layoutX="197.0" layoutY="480.0" mnemonicParsing="false" onAction="#changeSceneToDoctorPage" prefHeight="31.0" prefWidth="89.0" text="Login" />
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="pn_patient1" layoutX="630.0" prefHeight="600.0" prefWidth="480.0" style="-fx-background-color: #fff;">
                <children>
                   <Text fontSmoothingType="LCD" layoutX="66.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Portal" textAlignment="CENTER" wrappingWidth="347.00001046061516">
@@ -52,25 +52,25 @@
                         <Font name="Bell MT" size="48.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="IDPatient" layoutX="131.0" layoutY="355.0" prefHeight="31.0" prefWidth="218.0" promptText="Patient ID Number" />
-                  <Text fontSmoothingType="LCD" layoutX="105.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your seven-digit Patient ID Number to login and continue" textAlignment="CENTER" wrappingWidth="269.99999475479126">
+                  <TextField fx:id="IDPatient" layoutX="131.0" layoutY="317.0" prefHeight="31.0" prefWidth="218.0" promptText="Patient ID Number" />
+                  <Text fontSmoothingType="LCD" layoutX="105.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your seven-digit Patient ID Number to login and continue" textAlignment="CENTER" wrappingWidth="269.99999475479126">
                      <font>
                         <Font size="11.0" />
                      </font>
                   </Text>
-                  <Text fontSmoothingType="LCD" layoutX="151.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="177.00001001358032">
+                  <Text fontSmoothingType="LCD" layoutX="151.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="177.00001001358032">
                      <font>
                         <Font name="Bell MT" size="34.0" />
                      </font>
                   </Text>
-                  <Button layoutX="195.0" layoutY="406.0" mnemonicParsing="false" onAction="#changeSceneToPatientMainMenu" prefHeight="31.0" prefWidth="89.0" text="Login" />
+                  <Button layoutX="195.0" layoutY="367.0" mnemonicParsing="false" onAction="#changeSceneToPatientMainMenu" prefHeight="31.0" prefWidth="89.0" text="Login" />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="176.0" prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: #000099;">
          <children>
-            <Accordion layoutX="110.0" layoutY="280.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="250.0">
+            <Accordion layoutX="110.0" layoutY="185.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="250.0">
               <panes>
                 <TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0" text="Objective">
                   <content>
@@ -103,7 +103,7 @@
                 </TitledPane>
               </panes>
             </Accordion>
-            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="59.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump">
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="59.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insulin Pump">
                <font>
                   <Font name="Bell MT" size="60.0" />
                </font>
